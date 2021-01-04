@@ -1,0 +1,47 @@
+*{
+	font-family: 'Montserrat', sans-serff;
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background: url(https://images2.alphacoders.com/949/949049.png) no-repeat center center fixed;
+	background-size: cover;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+h1{
+	text-align: center;
+	background-color: #BBE4FA;
+	opacity: 0.8;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+h2{
+	margin-top: 50px;
+	padding-bottom: 5px;
+	padding-top: 5px;
+	background-color: #C1C5C8;
+	text-align: center;
+}
+
+.container{
+	display: grid;
+	grid-template-areas: 
+	"header header header"
+	"scroll content content"
+	"scroll content content"
+}
+
+.item1{
+	grid-area: content;
+	background-color: blue;
+}
+
+.item2{
+	grid-area:scroll;
+}
