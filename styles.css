@@ -1,5 +1,6 @@
 *{
 	font-family: 'Montserrat', sans-serff;
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
@@ -10,18 +11,79 @@ body{
 }
 header{
 	text-align: center;
-	background-color: #B6CBDA;
+	background-color: #E7E8E9;
+	opacity: 1;
+	padding-bottom: 0px;
+	padding-top: 30px;
+	margin-bottom: 100px;
+}
+header h1{
+	font-size: 3em;
+}
+
+/*NAV BAR STYLING */
+nav{
+	margin-top: 30px;
+}
+nav .container{
+	position: relative;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 75px;
+}
+
+nav .container div{
+	align-self: center;
+	background-color: #FFFFFF;
+}
+
+nav a{
+	color:#000;
+	text-decoration: none;
+}
+
+nav a:hover{
+	background-color: #BBC7D3;
+	cursor: pointer;
+}
+
+nav .name{
+	top: 11%;
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #E7E8E9;
+	opacity: 0.8;
+}
+
+nav div .name{
+	
+}
+
+/*END OF NAV BAR STYLING */
+
+main{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+footer{
+	text-align: center;
+	background-color: #E7E8E9;
 	opacity: 1;
 	padding-bottom: 50px;
 	padding-top: 50px;
+}
+
+.margin{
 	margin-bottom: 100px;
 }
 
-h2{
-	background-color: #B6CBDA;
-	text-align: center;
-	padding-top: 10px;
-	padding-bottom: 10px;
+.information{
+	background-color:#E7E8E9;
+	opacity: 0.8;
+	margin-bottom: 100px;
 }
 
 .container{
@@ -29,8 +91,22 @@ h2{
 	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: 500px;
-	grid-column-gap: 30px;
+	grid-template-rows: 550px;
+}
+
+/*SPARTAN NAMES UNDER PICTURE*/
+.name{
+	position: relative;
+	top: 89.3%;
+	width: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: #E7E8E9;
+	opacity: 0.8;
+}
+.name:hover{
+	background-color: #BBC7D3;
+	cursor: pointer;
 }
 
 .tile{
@@ -38,14 +114,117 @@ h2{
 	background-color: #EFF0F1;
 }
 
-.name{
-	position: absolute;
-	width:1fr;
-	background-color: #C6E6FC;
+/*TEAM LOGO HEADER*/
+.team-logo {
+	position: relative;
+	background-color: #E7E8E9;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	opacity: 0.8;
 }
 
-.name:hover{
-	background-color: #64A8D6;
+.team-logo h2{
+	font-size: 2.5em;
+}
+
+/*SPARTAN PICTURES*/
+
+/*BLUE TEAM*/
+#John-117{
+	background: url(John-117.jpg) center;
+	background-size: cover;
+}
+
+#Kelly-087{
+	background: url(Kelly-087.jpg) center;	
+	background-size: cover;
+}
+
+#Frederic-104{
+	background: url(Frederic-104.jpg) center;
+	background-size: cover;
+}
+
+#Linda-058{
+	background: url(Linda-058.jpg) center;
+	background-size: cover;
+}
+
+/*FIRETEAM OSIRIS*/
+#Jameson-Locke{
+	background: url(locke.jpg) center;
+	/*url(https://i.pinimg.com/originals/13/b9/45/13b94562243ce05bae8ef19b774ae895.jpg) center;*/
+	background-size: cover;
+}
+
+#Edward-Buck{
+	background: url(Buck.jpg) center;	
+	background-size: cover;
+}
+
+#Holly-Tanaka{
+	background: url(tanaka.jpg) center;
+	background-size: cover;
+}
+
+#Olympia-Vale{
+	background: url(https://images.hdqwalls.com/download/vale-halo-5-guardians-1600x1200.jpg) center;
+	background-size: cover;
 }
 
 
+/*EXTRA SMALL DEVICES */
+@media(max-width: 576px){
+}
+
+/*SMALLER DEVICES*/
+@media(max-width: 768px){
+
+	.container{
+		position: relative;
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-row-gap: 20px;
+		grid-template-rows: 300px 300px 300px 300px;
+		margin-bottom: 100px;
+	}
+
+	/*SPARTAN NAMES UNDER PICTURE*/
+	.name{
+		position: relative;
+		top: 80.3%;
+		width: 100%;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		background-color: #E7E8E9;
+		opacity: 0.8;
+	}
+
+}
+
+@media (min-width: 769px) and (max-width: 992px){
+
+	.container{
+		position: relative;
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-row-gap: 20px;
+		grid-template-rows: 400px 400px;
+		margin-bottom: 100px;
+	}
+
+	/*SPARTAN NAMES UNDER PICTURE*/
+	.name{
+		position: relative;
+		top: 85.3%;
+		width: 100%;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		background-color: #E7E8E9;
+		opacity: 0.8;
+	}
+
+}
