@@ -2,20 +2,22 @@
 	font-family: 'Montserrat', sans-serff;
 	box-sizing: border-box;
 	margin: 0;
-	padding: 0;
 }
 
-body{
-	background: url(https://images2.alphacoders.com/949/949049.png) no-repeat center center fixed;
-	background-size: cover;
+html{
+	scroll-behavior: smooth;
 }
+
+html,body{
+	height: 100%;
+}
+
 header{
 	text-align: center;
 	background-color: #E7E8E9;
 	opacity: 1;
 	padding-bottom: 0px;
 	padding-top: 30px;
-	margin-bottom: 100px;
 }
 header h1{
 	font-size: 3em;
@@ -25,7 +27,7 @@ header h1{
 nav{
 	margin-top: 30px;
 }
-nav .container{
+nav .container-4{
 	position: relative;
 	width: 100%;
 	display: grid;
@@ -33,7 +35,7 @@ nav .container{
 	grid-template-rows: 75px;
 }
 
-nav .container div{
+nav .container-4 div{
 	align-self: center;
 	background-color: #FFFFFF;
 }
@@ -43,31 +45,38 @@ nav a{
 	text-decoration: none;
 }
 
-nav a:hover{
-	background-color: #BBC7D3;
-	cursor: pointer;
-}
-
 nav .name{
-	top: 11%;
+	top: 21%;
 	width: 100%;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	background-color: #E7E8E9;
-	opacity: 0.8;
+	opacity: 0.9;
 }
 
-nav div .name{
-	
+nav .name:hover{
+	cursor: pointer;
+}
+
+#Blue:hover{
+	background: #BBC7D3;
+}
+
+#Fire:hover{
+	background: #FBA994;
+}
+
+#Noble:hover{
+	background: #AFABAA;
+}
+
+#Alpha:hover{
+	background: #F5E57F;
 }
 
 /*END OF NAV BAR STYLING */
 
-main{
-	margin-left: 20px;
-	margin-right: 20px;
-}
 
+/*FOOTER STUFF*/
 footer{
 	text-align: center;
 	background-color: #E7E8E9;
@@ -76,8 +85,22 @@ footer{
 	padding-top: 50px;
 }
 
+footer a{
+	text-decoration: none;
+	color: black;
+}
+
+footer a:hover{
+	color: #236485;
+}
+
+footer span{
+	margin-left: 20%;
+}
+/*END OF FOOTER STUFF */
+
 .margin{
-	margin-bottom: 100px;
+	
 }
 
 .information{
@@ -86,13 +109,22 @@ footer{
 	margin-bottom: 100px;
 }
 
-.container{
+.container-4{
 	position: relative;
 	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: 550px;
 }
+
+.container-6{
+	position: relative;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 550px 550px;
+}
+
 
 /*SPARTAN NAMES UNDER PICTURE*/
 .name{
@@ -128,43 +160,97 @@ footer{
 	font-size: 2.5em;
 }
 
-/*SPARTAN PICTURES*/
+/*Background Images*/
+.sky{
+	position: relative;
+	opacity: 0.65;
+	background: url(https://i.redd.it/cogiia0jmkz11.jpg) no-repeat center fixed;
+	background-size: cover;
+	min-height: 100%;
+}
 
+.reachpic{
+	opacity: 0.65;
+	background: url(https://i.pinimg.com/originals/f0/c1/70/f0c170aa212e628a22dba9e43fa814f3.jpg) no-repeat center fixed;
+	background-size: cover;
+	min-height: 600px;
+}
+
+.forerunner{
+	opacity: 0.65;
+	background: url(https://images2.alphacoders.com/783/thumb-1920-783750.jpg) no-repeat center fixed;
+	background-size: cover;
+	min-height: 600px;
+}
+
+.odst{
+	opacity: 0.65;
+	background: url(https://i.pinimg.com/originals/7c/b3/9b/7cb39b696fae4e025a215dd005342f43.jpg) no-repeat center fixed;
+	background-size: cover;
+	min-height: 600px;
+}
+
+.ringpic{
+	opacity: 0.65;
+	background: url(https://wallpaperaccess.com/full/897502.png) no-repeat center fixed;
+	background-size: cover;
+	min-height: 600px;
+}
+
+.caption{
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	padding: 0px;
+	text-align: center;
+}
+
+/*span border in sky container*/
+.sky .caption span{
+	padding: 20px;
+	border: 2px solid black;
+	color:white;
+	background: black;
+}
+
+/*END OF BACKGROUND PICS*/
+
+/*SPARTAN PICTURES*/
 /*BLUE TEAM*/
 #John-117{
-	background: url(John-117.jpg) center;
+	background: url(pics/John-117.jpg) center;
 	background-size: cover;
 }
 
 #Kelly-087{
-	background: url(Kelly-087.jpg) center;	
+	background: url(pics/Kelly-087.jpg) center;	
 	background-size: cover;
 }
 
 #Frederic-104{
-	background: url(Frederic-104.jpg) center;
+	background: url(pics/Frederic-104.jpg) center;
 	background-size: cover;
 }
 
 #Linda-058{
-	background: url(Linda-058.jpg) center;
+	background: url(pics/Linda-058.jpg) center;
 	background-size: cover;
 }
 
 /*FIRETEAM OSIRIS*/
 #Jameson-Locke{
-	background: url(locke.jpg) center;
+	background: url(pics/locke.jpg) center;
 	/*url(https://i.pinimg.com/originals/13/b9/45/13b94562243ce05bae8ef19b774ae895.jpg) center;*/
 	background-size: cover;
 }
 
 #Edward-Buck{
-	background: url(Buck.jpg) center;	
+	background: url(pics/Buck.jpg) center;	
 	background-size: cover;
 }
 
 #Holly-Tanaka{
-	background: url(tanaka.jpg) center;
+	background: url(pics/tanaka.jpg) center;
 	background-size: cover;
 }
 
@@ -172,6 +258,14 @@ footer{
 	background: url(https://images.hdqwalls.com/download/vale-halo-5-guardians-1600x1200.jpg) center;
 	background-size: cover;
 }
+
+/*Noble Team*/
+#SPARTAN-B312{
+	background: url(https://www.halopedia.org/images/2/2b/B312.png) center;
+	background-size: cover;
+}
+
+/*Alpha-Nine*/
 
 
 /*EXTRA SMALL DEVICES */
@@ -181,7 +275,7 @@ footer{
 /*SMALLER DEVICES*/
 @media(max-width: 768px){
 
-	.container{
+	.container-4{
 		position: relative;
 		width: 100%;
 		display: grid;
@@ -206,7 +300,7 @@ footer{
 
 @media (min-width: 769px) and (max-width: 992px){
 
-	.container{
+	.container-4{		
 		position: relative;
 		width: 100%;
 		display: grid;
