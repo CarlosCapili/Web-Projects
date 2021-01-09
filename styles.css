@@ -170,6 +170,7 @@ footer span{
 }
 
 .reachpic{
+	position: relative;
 	opacity: 0.65;
 	background: url(https://i.pinimg.com/originals/f0/c1/70/f0c170aa212e628a22dba9e43fa814f3.jpg) no-repeat center fixed;
 	background-size: cover;
@@ -191,6 +192,7 @@ footer span{
 }
 
 .ringpic{
+	position: relative;
 	opacity: 0.65;
 	background: url(https://wallpaperaccess.com/full/897502.png) no-repeat center fixed;
 	background-size: cover;
@@ -203,12 +205,13 @@ footer span{
 	width: 100%;
 	padding: 0px;
 	text-align: center;
+	font-size: 1.1em;
 }
 
 /*span border in sky container*/
-.sky .caption span{
+.caption span{
 	padding: 20px;
-	border: 2px solid black;
+	border: 2px solid white;
 	color:white;
 	background: black;
 }
