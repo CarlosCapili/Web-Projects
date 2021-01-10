@@ -263,13 +263,68 @@ footer span{
 }
 
 /*Noble Team*/
+#Carter-A259{
+	background: url(https://halo.bungie.net/Stats/Reach/Screenshot.ashx?fid=4E56440904C9250B29DD36CA31E2ECA2&size=full) center;
+	background-size: cover;
+}
+
+#Catherine-B320{
+	background: url(https://images.squarespace-cdn.com/content/v1/58e1668c2e69cfd46ac3028a/1543513133106-KP4RTD9V731QN8MVHM8I/ke17ZwdGBToddI8pDm48kImwWZxDjA50ZMQy6nGqIskUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcGQVF82O6mhqli_KUHGt8DU8NSaE860t1MNPR9zsxwQPoeX6PGV9p23Jo0OkaM7uH/Kat-B320) center;
+	background-size: cover;
+
+}
+
+#Jun-A226{
+	background: url(https://content.halocdn.com/media/Default/encyclopedia/characters/jun-a266/jun-a266-square-542x542-8576226f5a094ca2bcded1b5e2791267.jpg) center;
+	background-size: cover;
+
+}
+
+#Emile-A239{
+	background: url(https://static.wikia.nocookie.net/halo/images/d/df/Emile_main.png/revision/latest?cb=20100823071838) center;
+	background-size: cover;
+}
+
+#Jorge-052{
+	background: url(https://www.halopedia.org/images/thumb/f/ff/Jorge-052.jpg/723px-Jorge-052.jpg) center;
+	background-size: cover;
+}
+
 #SPARTAN-B312{
 	background: url(https://www.halopedia.org/images/2/2b/B312.png) center;
 	background-size: cover;
 }
 
 /*Alpha-Nine*/
+#Dare{
+	background: url(https://content.halocdn.com/media/Default/encyclopedia/characters/veronica-dare/dare-square-542x542-aaa373e7c25b4d17a515e5aecc8d4af2.jpg) center;
+	background-size: cover;
+}
 
+#Buck{
+	background: url(https://news-cdn.softpedia.com/images/news2/Halo-New-Blood-Novel-Revealed-Coming-on-March-2-470945-12.jpg) center;
+	background-size: cover;
+}
+
+#Dutch{
+	background: url(https://static.wikia.nocookie.net/halo/images/3/3d/Dutch.jpg/revision/latest?cb=20100714141838&path-prefix=de) center;
+	background-size: cover;
+}
+
+#Romeo{
+	background: url(https://static.wikia.nocookie.net/halo/images/1/1d/RomeoNoHelm.jpg/revision/latest?cb=20090915142741&path-prefix=ja) center;
+	background-size: cover;
+}
+
+#Mickey{
+	background: url(https://static1.fjcdn.com/comments/Numbmind+used+roll+picturenumbmind+rolled+imagenothing+that+turkey+couldve+done+_54eac8d40397df4ec1635f4382696598.png) center;
+	background-size: cover;
+}
+
+#Rookie{
+	background: url(https://c4.wallpaperflare.com/wallpaper/550/874/327/halo-3-odst-the-rookie-wallpaper-preview.jpg) center;
+	background-size: cover;
+}
 
 /*EXTRA SMALL DEVICES */
 @media(max-width: 576px){
