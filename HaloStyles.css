@@ -338,9 +338,15 @@ footer span{
 		width: 100%;
 		display: grid;
 		grid-template-columns: 1fr;
-		grid-row-gap: 20px;
 		grid-template-rows: 300px 300px 300px 300px;
-		margin-bottom: 100px;
+	}
+
+	.container-6{
+		position: relative;
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 300px 300px 300px 300px 300px 300px;
 	}
 
 	/*SPARTAN NAMES UNDER PICTURE*/
@@ -363,9 +369,15 @@ footer span{
 		width: 100%;
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		grid-row-gap: 20px;
 		grid-template-rows: 400px 400px;
-		margin-bottom: 100px;
+	}
+
+	.container-6{
+		position: relative;
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 400px 400px 400px;
 	}
 
 	/*SPARTAN NAMES UNDER PICTURE*/
