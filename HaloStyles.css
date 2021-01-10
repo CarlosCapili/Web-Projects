@@ -360,6 +360,12 @@ footer span{
 		opacity: 0.8;
 	}
 
+	nav .container-4 {
+		position: relative;
+		width: 100%;
+		display: block;
+	}
+
 }
 
 @media (min-width: 769px) and (max-width: 992px){
