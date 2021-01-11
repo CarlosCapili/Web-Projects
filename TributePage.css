@@ -11,8 +11,13 @@ section h2{
 	text-align: center;
 }
 
+footer{
+	padding: 50px 0;
+	background-color:white;
+	text-align: center;
+}
+
 #title h1{
-	
 	font-weight: bold;
 	font-size: 3.5em;
 	margin-bottom: 0;
@@ -38,11 +43,11 @@ section h2{
 }
 
 #image{
+	display: block;
+	margin: 0 auto;
 	padding-top: 40px;
-	max-width: 100%;
+	max-width: 90%;
 	height: auto;
-	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  	filter: grayscale(100%);
 }
 
 #tribute-info ul{
