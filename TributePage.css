@@ -1,0 +1,54 @@
+* {
+	box-sizing: border-box;
+	font-family: 'Mukta Vaani', sans-serif;
+}
+
+body{
+	background-color: #F0EFEF;
+}
+
+#title h1{
+	
+	font-weight: bold;
+	font-size: 3.5em;
+	margin-bottom: 0;
+}
+
+#title p{
+	margin-top:0px;
+}
+
+#title{
+	
+	text-align: center;
+}
+
+#img-div{
+	background-color: white; 
+	text-align: center;
+}
+
+#img-caption{
+	padding-bottom: 20px;
+}
+
+#image{
+	padding-top: 40px;
+	max-width: 100%;
+	height: auto;
+}
+
+#tribute-info ul{
+	margin: auto;
+	width: 540px;
+	text-align: left;
+}
+
+#tribute-info h1{
+	text-align: center;
+}
+
+#video{
+	text-align: center;
+}
+
