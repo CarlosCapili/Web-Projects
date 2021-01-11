@@ -7,6 +7,10 @@ body{
 	background-color: #F0EFEF;
 }
 
+section h2{
+	text-align: center;
+}
+
 #title h1{
 	
 	font-weight: bold;
