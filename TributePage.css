@@ -29,6 +29,7 @@ body{
 }
 
 #img-caption{
+	padding-top: 20px;
 	padding-bottom: 20px;
 }
 
@@ -36,19 +37,30 @@ body{
 	padding-top: 40px;
 	max-width: 100%;
 	height: auto;
+	-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  	filter: grayscale(100%);
 }
 
 #tribute-info ul{
 	margin: auto;
-	width: 540px;
+	max-width: 550px;
 	text-align: left;
+	line-height: 1.6;
+}
+
+#tribute-info li{
+	margin-bottom: 16px;
+	margin-top: 16px;
+
 }
 
 #tribute-info h1{
 	text-align: center;
+	margin: 50px auto;
 }
 
-#video{
+.video-responsive{
 	text-align: center;
 }
+
 
