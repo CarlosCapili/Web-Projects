@@ -1,4 +1,27 @@
-body{
-	background: url(https://wallpaperaccess.com/full/2272466.jpg) no-repeat center fixed;
+body {
+	background: linear-gradient(to bottom,rgba(32, 100, 189, 0.6), rgba(32, 100, 189, 0.6)),url(https://wallpaperaccess.com/full/2272466.jpg) no-repeat center fixed;
+	background: -moz-linear-gradient(to bottom,rgba(32, 100, 189, 0.6), rgba(32, 100, 189, 0.6)),url(https://wallpaperaccess.com/full/2272466.jpg) no-repeat center fixed;
+	background: -o-linear-gradient(to bottom,rgba(32, 100, 189, 0.6), rgba(32, 100, 189, 0.6)),url(https://wallpaperaccess.com/full/2272466.jpg) no-repeat center fixed;
+	background: -ms-linear-gradient(to bottom,rgba(32, 100, 189, 0.6), rgba(32, 100, 189, 0.6)),url(https://wallpaperaccess.com/full/2272466.jpg) no-repeat center fixed;
+	background: -webkit-linear-gradient(to bottom,rgba(32, 100, 189, 0.6), rgba(32, 100, 189, 0.6)),url(https://wallpaperaccess.com/full/2272466.jpg) no-repeat center fixed;
 	background-size: cover;
+	color: white;
+	font-family: 'Poppins', sans-serif;
+}
+
+#title{
+	text-align: center;
+}
+
+#description{
+	text-align: center;
+}
+
+#survey-form{
+	border-radius: 6px;
+	padding: 15px;
+	background: rgba(32, 100, 189, 0.8);
+	margin: 0 auto;
+	width: 600px;
+	height: auto;
 }
