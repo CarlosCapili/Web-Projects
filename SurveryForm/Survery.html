@@ -13,14 +13,78 @@
 			<p id="description"><i>Thank you for taking the time to provide us with your input</i></p>	
 		</header>
 
-		<section id="survey-form">
-			<h2>Name</h2>
-			<input type="text" name="" placeholder="Enter your name" required="">
-			<h2>Email</h2>
-			<input type="text" name="" placeholder="Enter your email" required="">
-			<h2>Age (optional)</h2>
-			<input type="text" name="" placeholder="Enter your age" required="">
-		</section>
+		<form id="survey-form">
+			<div class="form-div">
+				<h2>Name</h2>
+				<input class="form-input"  id="name" type="text" name="Name" placeholder="Enter your name" required>
+			</div>
+			<div class="form-div">
+				<h2>Email</h2>
+				<input class="form-input" id="email" type="text" name="Email" placeholder="Enter your email" required>
+			</div>
+			<div class="form-div">
+				<h2>Age <span>(optional)</span></h2>
+				<input class="form-input" id="number" type="text" name="Age" placeholder="Enter your age">
+			</div>
+
+			<div class="form-div">
+				<h2>Which option best describes your current role?</h2>
+				<label for="dropdown">
+					<select class="form-input"name="roles" id="dropdown">
+						<option value="none" selected disabled>Select current role</option>
+						<option value="pro">Pro Gamer</option>
+						<option value="avid">Avid Gamer</option>
+						<option value="noob">Noob Gamer</option>
+						<option value="loser">Loser</option>
+						<option value="no-say">Prefer not to say</option>
+						<option value="none">Don't exist</option>
+					</select>
+
+				</label>
+			</div>
+
+			<div class="form-div">
+				<h2>Would you recommend Cyberpunk 2077 to a friend?</h2>
+				<label for="definitely"><input id="definitely"type="radio" name="recommend">Definitely</label><br>
+				<label for="maybe"><input id="maybe"type="radio" name="recommend">Maybe</label><br>
+				<label for="nah"><input id="nah"type="radio" name="recommend">GTA 5 is better</label>
+
+			</div>
+
+			<div class="form-div">
+				<h2>What is your favorite type of video game?</h2>
+				<label for="gametype">
+					<select class="form-input" name="games" id="gametype">
+						<option value="none" selected disabled>Select type of game</option>
+						<option value="open">Open World</option>
+						<option value="simulation">Simulation</option>
+						<option value="race">Racing</option>
+						<option value="fight">Fighting</option>
+						<option value="no-say">Prefer not to say</option>
+						<option value="all">ALL GAMES</option>
+					</select>
+				</label>
+			</div>
+
+			<div class="form-div">
+				<h2>What game would you like to see be released? <span>(Check all that apply)</span></h2>
+				<label for="gta6"><input type="checkbox" name="release" value="gta6" id="gta6">Grand Theft Auto 6</label><br>
+				<label for="scrolls"><input type="checkbox" name="release" value="scrolls" id="scrolls">Elder Scrolls 6</label><br>
+				<label for="halo"><input type="checkbox" name="release" value="halo" id="halo">Halo Infinite</label><br>
+				<label for="farcry"><input type="checkbox" name="release" value="farcry" id="farcry">Far Cry 6</label><br>
+				<label for="hitman"><input type="checkbox" name="release" value="hitman" id="hitman">Hitman 3</label><br>
+				<label for="godofwar"><input type="checkbox" name="release" value="godofwar" id="godofwar">God of War</label>
+			</div>
+
+			<div class="textarea">
+				<h2>Any comments, regrets, aspirations to share?</h2>
+				<textarea class="text" placeholder="Enter whatever thoughts you may have :D"></textarea>
+			</div>
+
+			<div class="form-div">
+				<button type="submit">Submit</button>
+			</div>
+		</form>
 	</main>
 
 </body>

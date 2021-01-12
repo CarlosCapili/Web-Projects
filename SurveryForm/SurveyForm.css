@@ -1,3 +1,8 @@
+*{
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
 body {
 	background: linear-gradient(to bottom,rgba(32, 100, 189, 0.6), rgba(32, 100, 189, 0.6)),url(https://wallpaperaccess.com/full/2272466.jpg) no-repeat center fixed;
 	background: -moz-linear-gradient(to bottom,rgba(32, 100, 189, 0.6), rgba(32, 100, 189, 0.6)),url(https://wallpaperaccess.com/full/2272466.jpg) no-repeat center fixed;
@@ -9,19 +14,83 @@ body {
 	font-family: 'Poppins', sans-serif;
 }
 
+h2{
+	font-size: 1em;
+}
+
+span{
+	font-size: 0.8em;
+}
+
+
+input ,select, button, textarea{
+	border-radius: 6px;
+	border:0;
+}
+
+input:active{
+	border-color: #227E99;
+}
+
+button{
+	width: 100%;
+	background-color: #2CA65C;
+	color: white;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 0;
+	padding-right: 0;
+	border: 0;
+}
+
+button:hover{
+	cursor: pointer;
+	background-color: #238349;
+}
+
+.form-input{
+	width: 100%;
+	padding: 0.6em;
+}
+
+.form-div h2{
+	margin-bottom: 10px;
+}
+
+.form-div{
+	margin-left: 15px;
+	margin-right: 15px;
+}
+
+.text{
+	width: 100%;
+	min-height: 100px;
+}
+.textarea{
+	margin-right: 15px;
+	margin-left: 15px;
+	margin-bottom: 5px;
+}
+
+.textarea h2{
+	margin-bottom: 5px;
+}
+
 #title{
 	text-align: center;
+	margin-bottom: 0;
 }
 
 #description{
 	text-align: center;
+	margin-top: 0;
 }
 
 #survey-form{
 	border-radius: 6px;
-	padding: 15px;
+	padding: 25px;
 	background: rgba(32, 100, 189, 0.8);
 	margin: 0 auto;
-	width: 600px;
+	max-width: 700px;
 	height: auto;
 }
