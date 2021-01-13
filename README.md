@@ -1,5 +1,6 @@
-This is where I enhance my web dev skills during my free time. (Improving HTML and CSS, learning Javascript)
+Doing those freecodecamp responsive design projcets
 
 1. Halo - Playing around with HTML and CSS
 2. Tribute Page for Nate Robinson KO - starting small
 3. Survey - keep improving
+4. Product Landing Page - currently working on
