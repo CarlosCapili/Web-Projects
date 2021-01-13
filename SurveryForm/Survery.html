@@ -15,15 +15,15 @@
 
 		<form id="survey-form">
 			<div class="form-div">
-				<h2>Name</h2>
+				<label id="name-label" for="name"><h2>Name</h2></label>
 				<input class="form-input"  id="name" type="text" name="Name" placeholder="Enter your name" required>
 			</div>
 			<div class="form-div">
-				<h2>Email</h2>
+				<label id="email-label" for="email"><h2>Email</h2></label>
 				<input class="form-input" id="email" type="email" name="Email" placeholder="Enter your email" required>
 			</div>
 			<div class="form-div">
-				<h2>Age <span>(optional)</span></h2>
+				<label id="number-label" for="number"><h2>Age <span>(optional)</span></h2></label>
 				<input class="form-input" id="number" type="number" name="Age" placeholder="Enter your age" min="1" max="125">
 			</div>
 
@@ -45,9 +45,9 @@
 
 			<div class="form-div">
 				<h2>Would you recommend Cyberpunk 2077 to a friend?</h2>
-				<label for="definitely"><input class="largerbox" id="definitely"type="radio" name="recommend">Definitely</label>
-				<label for="maybe"><input class="largerbox" id="maybe"type="radio" name="recommend">Maybe</label>
-				<label for="nah"><input class="largerbox" id="nah"type="radio" name="recommend">GTA 5 is better</label>
+				<label for="definitely"><input class="largerbox" id="definitely"type="radio" name="recommend" value="yes">Definitely</label>
+				<label for="maybe"><input class="largerbox" id="maybe"type="radio" name="recommend" value="maybe">Maybe</label>
+				<label for="nah"><input class="largerbox" id="nah"type="radio" name="recommend" value="no">GTA 5 is better</label>
 
 			</div>
 
@@ -82,7 +82,7 @@
 			</div>
 
 			<div class="form-div">
-				<button type="submit">Submit</button>
+				<button id="submit" type="submit">Submit</button>
 			</div>
 		</form>
 	</main>
