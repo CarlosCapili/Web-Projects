@@ -1,0 +1,40 @@
+body{
+	background-color: #6EB7F3 ;
+	font-family: 'Poppins', sans-serif;
+}
+
+.todo-container{
+	margin-top: 20px;
+	background-color: #DCEBF7;
+	border-radius: 5px;
+	padding: 15px;
+}
+
+.todo-container .style-button{
+	background-color: white;
+	text-align: center;
+	display: inline-block;
+	padding: 5px 10px;
+	margin: 5px 5px;
+	border: none;
+	border-radius: 5px;
+}
+
+.todo-container .style-button:hover{
+	cursor: pointer;
+	background-color: #E2E3E3; 
+}
+
+#control-container{
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.todo-container ol{
+	margin: 20px 0;
+}
+
+.todo-container form{
+	display: inline-block;
+}
