@@ -7,7 +7,7 @@
 <body>
 	<form>
 		Meme text: <input type="text" id="user-text" maxlength="70" oninput="update_text()"><p>
-		Select Picture: <input type="file" id="user-picture"><p>
+		Select Picture: <input type="file" id="user-picture" onchange="update_image()"><p>
 	</form>
 
 	<div id="meme-text"></div>
