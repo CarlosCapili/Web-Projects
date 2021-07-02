@@ -7,13 +7,14 @@
 </head>
 <body>
 	<div class="todo-container">
-		<h2>To-Do List</h2>
-		<form>
-			<input type="text" id="todo-entry">
-		</form>
-		<button id="add" class="style-button">Add</button>
-		<br>
-		<ol id="todo-list"></ol>
+		<div id="enter-task">
+			<form>
+				<input type="text" id="todo-entry" placeholder="Enter a task" class="mytext">
+			</form>
+			<button id="add" class="style-button">&#43;</button>
+		</div>
+	
+		<ul id="todo-list"></ul>
 		<div id="control-container">
 			<button id="clear" class="style-button">Clear Completed</button>
 			<button id="empty" class="style-button">Empty List</button>

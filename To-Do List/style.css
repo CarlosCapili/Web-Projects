@@ -5,36 +5,53 @@ body{
 
 .todo-container{
 	margin-top: 20px;
-	background-color: #DCEBF7;
+	background-color: #FFF;
 	border-radius: 5px;
 	padding: 15px;
 }
 
 .todo-container .style-button{
-	background-color: white;
+	background-color: #28B463;
 	text-align: center;
 	display: inline-block;
 	padding: 5px 10px;
-	margin: 5px 5px;
+	margin: 5px 10px;
 	border: none;
 	border-radius: 5px;
+	color: #FFF;
 }
 
 .todo-container .style-button:hover{
 	cursor: pointer;
-	background-color: #E2E3E3; 
-}
-
-#control-container{
-	text-align: center;
-	display: flex;
-	flex-wrap: wrap;
+	background-color: #82E0AA; 
 }
 
 .todo-container ol{
 	margin: 20px 0;
 }
 
+.todo-container h2{
+	text-align: center;
+}
+
 .todo-container form{
 	display: inline-block;
+	width: 30%;
+}
+
+.todo-container input {
+	outline: none;
+	width: 90%;
+	height: 20px;
+}
+
+#enter-task{
+	text-align: center;
+}
+
+#control-container{
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
