@@ -5,7 +5,13 @@
 }
 
 .calc-display{
-	text-align: left;
+	border: 1px solid #D5D8DC;
+	font-size: 35px;
+	background-color: #212F3D;
+	color: #FFF;
+	text-align: right;
+	padding: 20px;
+
 }
 
 .calc-keypad {
@@ -19,6 +25,7 @@
 	padding: 10px;
 	margin: 0.5px;
 	border: none;
+
 }
 
 .buttons:hover {
