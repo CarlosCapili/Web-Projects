@@ -3,3 +3,4 @@
 3. Survey - keep improving
 4. To do list
 5. MemeCreator
+6. Calculator
