@@ -53,7 +53,6 @@ function btn_clicked() {
 }
 
 function updateDisplay() {
-
 	display.innerHTML = opPressed.join("") + btnPressed.join("");
 	
 	//if an operator is pressed first, then display 0
