@@ -73,6 +73,11 @@ function evaluate() {
 	if (opPressed.length == 0 && btnPressed.length == 0) {
 		display.innerHTML = 0;
 	}
+	else if (btnPressed.length == 0 && opPressed.length >= 1) {
+		btnPressed = [];
+		opPressed =[];
+		display.innerHTML = "Syntax ERROR!";
+	}
 	else {
 		temp_str = opPressed.join("") + btnPressed.join(""); 
 		answer = eval(temp_str);
