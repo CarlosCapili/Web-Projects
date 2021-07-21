@@ -1,0 +1,46 @@
+body {
+    font-size: 13px;
+    font-family: arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.navbar {
+    display: flex; 
+    flex-direction: row;
+    padding: 8px;
+    align-items: center;
+    height: 40px;
+}
+
+.nav-left a {
+    margin-right: 15px;
+}
+
+.nav-right {
+   margin-left: auto;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+}
+
+#sign-in {
+    margin-left: 15px;
+    padding: 10px 25px;
+    border-radius: 3px;
+    font-size: 14px;
+    background-color: #1a73e8;
+}
+
+#sign-in a {
+    color: white;
+}
