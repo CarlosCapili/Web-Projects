@@ -5,6 +5,7 @@ html,body {
 }
 
 body {
+    box-sizing: border-box;
     font-size: 13px;
     font-family: arial, sans-serif;
 }
@@ -25,7 +26,7 @@ a:hover {
 .navbar {
     display: flex; 
     flex-direction: row;
-    padding: 5px;
+    padding: 10px;
     align-items: center;
 
 }
@@ -54,6 +55,28 @@ a:hover {
 .options {
     display: flex;
     align-items: center;
+}
+
+.footer-container {
+    position: absolute;
+    border-top: 1px #D7D7D7 solid;
+    background-color: #F7F7F7;
+    color: #747474;
+    font-size: 14px;
+    display: flex;
+    bottom: 0;
+    width: 100%;
+    height: 3rem;
+}
+
+.Word {
+    margin: 5px;
+    padding: 10px;
+}
+
+.Word:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .search-bar-container {
@@ -91,11 +114,34 @@ a:hover {
 .google-search {
     width: 42px;
     height: 42px;
-
 }
 
 .google-search img {
     margin-top: 5px;
+}
+
+.tile {
+    text-align: center;
+    background-color: #F8F8F8;
+    height: 15px;
+    width: auto;
+    font-size: 14px;
+    opacity: 0.8;
+    margin: 0px 10px;
+    padding: 12px;
+    border: none;
+}
+
+.tile:hover {
+    box-shadow: 0 1px 4px rgb(32 33 36 / 25%);
+    border-color: #B8B8B8;
+    cursor: pointer;
+}
+
+#tiles-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
 }
 
 #glass {
@@ -104,6 +150,7 @@ a:hover {
 
 #mic {
     float: right;
+    cursor: pointer;
 }
 
 
@@ -111,6 +158,11 @@ a:hover {
     margin-right: 10px;
     position: relative;
     top: 1.5px;
+}
+
+#app:hover {
+    background-color: #EFEFEF;
+    border-radius: 100%;
 }
 
 #sign-in {
@@ -121,8 +173,14 @@ a:hover {
     background-color: #1a73e8;
 }
 
+#sign-in:hover {
+    cursor: pointer;
+    background-color: #3988ee;
+}
+
 #sign-in a {
     color: white;
+    text-decoration: none;
 }
 
 #logo-container {
@@ -138,4 +196,14 @@ a:hover {
     bottom: 0px;
     left: 0%;
     right: 0%;
+}
+
+#left {
+    display: flex;
+    
+}
+
+#right {
+    display: flex;
+    margin-left: auto;
 }
