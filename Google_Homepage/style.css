@@ -1,6 +1,16 @@
+html,body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
 body {
     font-size: 13px;
     font-family: arial, sans-serif;
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
 }
 
 a {
@@ -15,17 +25,30 @@ a:hover {
 .navbar {
     display: flex; 
     flex-direction: row;
-    padding: 8px;
+    padding: 5px;
     align-items: center;
-    height: 40px;
+
+}
+
+.nav-left {
+    margin-left: 20px;
+    font-size: 14px;
 }
 
 .nav-left a {
     margin-right: 15px;
 }
 
+.left {
+    margin-right: 19px;
+}
+
+.left a {
+    margin-right: 12px;
+}
+
 .nav-right {
-   margin-left: auto;
+    margin-left: auto;
 }
 
 .options {
@@ -33,9 +56,66 @@ a:hover {
     align-items: center;
 }
 
+.search-bar-container {
+    text-align: center;
+    margin-top: 20px;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    width: auto;
+    max-width: 584px;
+    height: 35px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 5px;
+}
+
+.search-bar-container:hover {
+    box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+    border-color: rgba(223,225,229,0);
+ 
+}
+
+.search-bar {
+    float: left;
+    width: 500px;
+    margin-top: 1.5px;
+}
+
+.search-bar input {
+    height: 30px;
+    font-size: 16px;
+    width: 100%;
+    border: none;
+}
+
+.google-search {
+    width: 42px;
+    height: 42px;
+
+}
+
+.google-search img {
+    margin-top: 5px;
+}
+
+#glass {
+    float: left;
+}
+
+#mic {
+    float: right;
+}
+
+
+#app {
+    margin-right: 10px;
+    position: relative;
+    top: 1.5px;
+}
+
 #sign-in {
     margin-left: 15px;
-    padding: 10px 25px;
+    padding: 10px 22px;
     border-radius: 3px;
     font-size: 14px;
     background-color: #1a73e8;
@@ -43,4 +123,19 @@ a:hover {
 
 #sign-in a {
     color: white;
+}
+
+#logo-container {
+    position: relative;
+    text-align: center;
+    min-height: 92px;
+    max-height: 300px;
+    height: calc(100% - 560px);
+}
+
+#logo {
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    right: 0%;
 }
