@@ -3,3 +3,4 @@
 3. To-do list
 4. Meme Creator
 5. JS Calculator
+6. Google Homepage - https://carloscapili.github.io/Web-Projects/Google_Homepage
