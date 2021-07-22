@@ -9,6 +9,7 @@ function computerPlay () {
     return computerChoice[Math.floor(Math.random()*3)]
 }
 
+//Maybe change the return to the winner of the round and have a separate function to update the score and display
 function playRound (playerSelection, computerSelection) {
     let pSelection = playerSelection.toLowerCase();
     let roundWinner = 0;
