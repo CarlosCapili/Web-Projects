@@ -22,10 +22,10 @@ body {
 /* Scoreboard styles */
 
 .score-container {
-    border: 1px black solid;
-    background-color: #52EE9C;
+    background-color: #62AEFF;
     padding: 10px;
-
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .scoreboard {
@@ -42,7 +42,7 @@ body {
 }
 
 .score {
-    margin-left: 80px;
+    margin-left: 100px;
 }
 
 #player {
@@ -51,4 +51,49 @@ body {
 
 #computer {
   
+}
+
+/* Button styles */
+.btn-container {
+    text-align: center;
+}
+
+.btn {
+    background-color: #FFFFFF;
+    text-align: center;
+    padding: 30px;
+    cursor: pointer;
+    margin: 0px 20px;
+    width: 120px;
+    height: 100px;
+    border: none;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    background-color: #D7D7D7;
+}
+
+/* Display styles */
+.display {
+    height: 400px;
+    background-color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.choice {
+    flex: 1 1 0px;
+    text-align: center;
+    align-self: center;
+}
+
+#display-choice {
+    height: 300px;
+    display: flex;
+}
+
+#display-winner {
+    height: 100px;
+    border-top: 3px solid #62AEFF;
+    margin: 0px 40px;
 }
