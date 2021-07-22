@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #c2dfff;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Main container styles */
+
+
+/* Title styles */
+.title {
+    text-align: center;
+    margin: 20px 0px;
+    padding: 20px;
+}
+
+/* Scoreboard styles */
+
+.score-container {
+    border: 1px black solid;
+    background-color: #52EE9C;
+    padding: 10px;
+
+}
+
+.scoreboard {
+    display: flex;
+    flex-direction: row;
+}
+
+.board {
+    flex: 1 1 0px;
+}
+
+.board h2 {
+    display: inline;
+}
+
+.score {
+    margin-left: 80px;
+}
+
+#player {
+
+}
+
+#computer {
+  
+}
