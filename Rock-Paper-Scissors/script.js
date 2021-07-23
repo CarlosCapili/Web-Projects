@@ -1,25 +1,61 @@
-const computerChoice = ["rock", "paper", "scissors"];
-const winningCombo = [["rock", "scissors"], ["paper", "rock"], ["scissors", 
-"paper"]];
-
-const playerChoices = document.querySelectorAll('button');
-
 let playerScore = 0;
 let computerScore = 0;
 
-playerChoices.forEach((button) => {
-   
-    button.addEventListener('click', () => {
-        console.log(button.id);
-        console.log(playRound(button.id, computerPlay()));
-    });
-});
+const winningCombo = [["rock", "scissors"], ["paper", "rock"], ["scissors", 
+"paper"]];
+const playerChoices = document.querySelectorAll('button');
+
+const pChoice = document.querySelector("#player-choice");
+const cChoice = document.querySelector("#comp-choice");
+const pScore = document.querySelector("#player-score");
+const cScore = document.querySelector("#comp-score");
+const winner = document.querySelector("#display-winner");
+
+playerChoices.forEach((button) => button.addEventListener('click', game));
+
+function game(e) {
+    if (!gameOver()) {  
+        let buttonId = e.target.id;
+        let compPlay = computerPlay();
+        playRound(buttonId, compPlay);
+        updateDisplay(buttonId, compPlay);
+        updateScore();
+        displayWinner();
+    }
+}
+
+function gameOver() {
+    if (playerScore == 5 || computerScore == 5){
+        return true;
+    }
+    return false;
+}
+
+function displayWinner() {
+    if (playerScore == 5) {
+        winner.textContent = "YOU WIN, YOU CHAMP!";
+    } 
+    
+    if (computerScore == 5){
+        winner.textContent = "YOU SUCK, YOU LOSER!";
+    }
+}
+
+function updateDisplay(button, compPlay) {
+    pChoice.textContent = button;
+    cChoice.textContent = compPlay;
+}
+
+function updateScore() {
+    pScore.textContent = playerScore;
+    cScore.textContent = computerScore;
+}
 
 function computerPlay () {
+    const computerChoice = ["rock", "paper", "scissors"];
     return computerChoice[Math.floor(Math.random()*3)];
 }
 
-//Maybe change the return to the winner of the round and have a separate function to update the score and display
 function playRound (playerSelection, computerSelection) {
     let roundWinner = 0;
   
@@ -48,6 +84,9 @@ function playRound (playerSelection, computerSelection) {
     }
     return str;
 }
+
+
+
 
 
 

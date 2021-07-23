@@ -5,26 +5,21 @@
 }
 
 body {
-    background-color: #c2dfff;
+    background-color: #D68910;
     font-family: 'Poppins', sans-serif;
 }
-
-/* Main container styles */
-
 
 /* Title styles */
 .title {
     text-align: center;
     margin: 20px 0px;
-    padding: 20px;
+    padding: 40px;
+    border-bottom: 3px solid #B9770E;
 }
 
 /* Scoreboard styles */
-
 .score-container {
-    background-color: #62AEFF;
     padding: 10px;
-    margin-bottom: 20px;
     text-align: center;
 }
 
@@ -45,39 +40,44 @@ body {
     margin-left: 100px;
 }
 
-#player {
-
-}
-
-#computer {
-  
-}
-
 /* Button styles */
 .btn-container {
     text-align: center;
 }
 
 .btn {
-    background-color: #FFFFFF;
-    text-align: center;
-    padding: 30px;
+    background-color: #D68910;
     cursor: pointer;
     margin: 0px 20px;
-    width: 120px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     border: none;
-    border-radius: 10px;
+    border-radius: 100px;
 }
 
 .btn:hover {
-    background-color: #D7D7D7;
+    background-color: #6e1daf;
 }
+
+#rock {
+    background-image: url("pngs/Rock.png");
+    background-size: cover;
+}
+
+#paper {
+    background-image: url("pngs/Paper.png");
+    background-size: cover;
+}
+
+#scissors {
+    background-image: url("pngs/Scissors.png");
+    background-size: cover;
+}   
 
 /* Display styles */
 .display {
     height: 400px;
-    background-color: #FFFFFF;
+    background-color: #99A3A4;
     margin-bottom: 20px;
 }
 
@@ -85,6 +85,7 @@ body {
     flex: 1 1 0px;
     text-align: center;
     align-self: center;
+    font-size: 30px;
 }
 
 #display-choice {
@@ -93,7 +94,12 @@ body {
 }
 
 #display-winner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100px;
-    border-top: 3px solid #62AEFF;
+    border-top: 3px solid #D68910;
     margin: 0px 40px;
+    text-align: center;
 }
+
