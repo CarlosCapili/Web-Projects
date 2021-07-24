@@ -5,3 +5,4 @@
 5. JS Calculator - https://carloscapili.github.io/Web-Projects/Calculator
 6. Google Homepage - https://carloscapili.github.io/Web-Projects/Google_Homepage
 7. Rock Paper Scissors - https://carloscapili.github.io/Web-Projects/Rock-Paper-Scissors
+8. SketchPad - https://carloscapili.github.io/Web-Projects/SketchPad
