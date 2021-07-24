@@ -4,22 +4,30 @@
 }
 
 body {
-    background-image: url("OF18H90.jpg");
-    background-size: contain;
+    background-image: url("background.png");
     font-family: 'VT323', monospace;
+}
+
+footer {
+    text-align: center;
+    background-color: rgb(206, 205, 205);
+    width: 700px;
+    margin: 40px auto;
+    padding: 10px;
 }
 
 .title {
     text-align: center;
-    margin-bottom: 20px;
+    margin: 20px auto;
+    margin-top: 0px;
     font-size: 25px;
-    background-color: #f3f3f3;
     padding: 20px;
+    width: 700px;
 }
 
 .title h1 {
-    color: rgb(0, 72, 155);
     font-size: 70px;
+    background-color: rgba(255, 255, 255, 0.493);
 }
 
 .grid {

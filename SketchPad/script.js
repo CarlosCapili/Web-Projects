@@ -8,6 +8,7 @@ const colors = ["FFFFFF", "C0C0C0", "808080", "000000",
                 "FF0000", "800000", "FFFF00", "808000",
                 "00FF00", "008000", "00FFFF", "008080",
                 "0000FF", "000080", "FF00FF", "800080"];
+const titleColor = document.querySelectorAll(".multicolor");
 
 //Tool choices
 let gridLines = 0;
@@ -72,6 +73,14 @@ colorCell.forEach((cell) => {
         currentColor.style.backgroundColor = color;
     });
 });
+
+function changeColor() {
+    titleColor.forEach((e) => {
+        e.style.color = "#"+colors[Math.floor((Math.random()*(16-4+1))+4)];
+    });
+}
+
+setInterval(changeColor, 2000);
 
 
 
