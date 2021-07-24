@@ -3,25 +3,48 @@
     padding: 0;
 }
 
-.title {
-    text-align: center;
-    margin-bottom: 50px;
+body {
+    background-image: url("OF18H90.jpg");
+    background-size: contain;
+   
 }
 
-.grid-container {
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 25px;
+    background-color: #f3f3f3;
+    padding: 20px;
+}
 
+.title h1 {
+    font-family: 'Frijole', cursive;
+    color: rgb(0, 72, 155);
 }
 
 .grid {
+    background-color: #ffffff;
     display: grid;
     margin: 0 auto;
-    width: 400px;
-    height: 400px;
-    border: 1px solid black;
+    width: 500px;
+    height:500px;
 }
 
 .cell {
-    border: 1px solid black;
+    /* border: 1px solid black; */
 
 }
 
+/* Control styles */
+.colorTemplate {
+    display: grid;
+    width: 250px;
+    height: 60px;
+    border: 1px solid black;
+    margin: 10px auto;
+    background-color: #FFFFFF;
+}
+
+.colors {
+    cursor: pointer;
+}
