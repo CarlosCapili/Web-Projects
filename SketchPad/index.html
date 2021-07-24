@@ -5,13 +5,19 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Frijole&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="sketch-container">
-        <div class="title"><h1>Etch A Sketch</h1></div>
+        <div class="title"><h1>Pixel Pad</h1></div>
         <div class="grid-container"><div class="grid"></div></div>
-        <div class="colorTemplate"></div>
+        <div class="tools-container">
+            <div id="currentColor" class="tile"></div>
+            <div id="colorTemplate"></div>
+            <div id="clear-grid" class="tile"></div>
+            <div id="toggle-grid" class="tile"><p>Toggle Grid</p></div>
+            
+        </div>
     </div>
  
     <script src="script.js"></script>

@@ -6,7 +6,7 @@
 body {
     background-image: url("OF18H90.jpg");
     background-size: contain;
-   
+    font-family: 'VT323', monospace;
 }
 
 .title {
@@ -18,8 +18,8 @@ body {
 }
 
 .title h1 {
-    font-family: 'Frijole', cursive;
     color: rgb(0, 72, 155);
+    font-size: 70px;
 }
 
 .grid {
@@ -30,21 +30,56 @@ body {
     height:500px;
 }
 
-.cell {
-    /* border: 1px solid black; */
-
+/* Control styles */
+.tools-container {
+    display: flex;
+    margin: 20px auto;
+    width: 500px;
+    justify-content: space-between;
 }
 
-/* Control styles */
-.colorTemplate {
-    display: grid;
-    width: 250px;
+.tile {
+    width: 60px;
     height: 60px;
-    border: 1px solid black;
-    margin: 10px auto;
-    background-color: #FFFFFF;
+    margin-right: 10px;
 }
 
 .colors {
     cursor: pointer;
 }
+
+#colorTemplate {
+    display: grid;
+    width: 250px;
+    height: 60px;
+    background-color: #FFFFFF;
+    margin-right: 10px;
+}
+
+#currentColor {
+    background-color: black;
+}
+
+#toggle-grid {
+    cursor: pointer;
+    background-color: #FFFFFF;
+    text-align: center;
+}
+
+#toggle-grid:hover {
+    background-color: #c5c4c4;
+}
+
+#toggle-grid p{
+    margin-top: 12px;
+}
+
+#clear-grid {
+    cursor: pointer;
+    background: url("eraser.jpg");
+    background-size: contain;
+    margin-right: 0px;
+}
+
+
+
