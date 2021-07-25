@@ -6,9 +6,10 @@ const colors = ["FFFFFF", "C0C0C0", "808080", "000000",
                 "00FF00", "008000", "00FFFF", "008080",
                 "0000FF", "000080", "FF00FF", "800080"];
 //Tool choices
-let gridLines = 0;
+let gridLines = 1;
 const isToggleClicked = document.querySelector("#toggle-grid");
 const isEraserClicked = document.querySelector("#clear-grid");
+let isMouseDown = false;
 
 randomColor();
 createGrid();
@@ -20,12 +21,13 @@ function createGrid () {
     gridDiv.style.gridTemplateColumns = 'repeat(30, 1fr)';
     gridDiv.style.gridTemplateRows = 'repeat(30, 1fr)';
     for (let i=0; i<900; i++) { 
-        let cell = document.createElement('div');
+        const cell = document.createElement('div');
         cell.classList.add('cell');
-        gridDiv.append(cell);
+        gridDiv.appendChild(cell);
     }
 }
 const gridCell = document.querySelectorAll(".cell");
+toggleGrid();
 
 //Create color cells
 function createColorTemplate() {
@@ -36,7 +38,7 @@ function createColorTemplate() {
         let color = document.createElement('div');
         color.classList.add("colors");
         color.style.backgroundColor = "#"+colors[j];
-        colorTemplate.append(color);
+        colorTemplate.appendChild(color);
     }
 }
 
@@ -48,8 +50,19 @@ function changeColor() {
     currentColor.style.backgroundColor = color;
 }
 
-function fillColor() {
+function MouseClicked() {
+    isMouseDown = true;
     this.style.backgroundColor = color;
+}
+
+function MouseUnclicked() {
+    isMouseDown = false;
+}
+
+function fillColor() {
+    if (isMouseDown) {
+        this.style.backgroundColor = color;
+    }
 }
 
 function randomColor() {
@@ -60,17 +73,17 @@ function randomColor() {
 }
 
 function toggleGrid() {
-    if (gridLines == 0) {
+    if (gridLines == 1) {
         gridCell.forEach((e) => {
             e.style.borderTop = "1px solid black";
             e.style.borderRight = "1px solid black";
         });
-        gridLines = 1;
+        gridLines = 0;
     } else {
         gridCell.forEach((e) => {
             e.style.border = "none";
         });
-        gridLines = 0;
+        gridLines = 1;
     }
 }
 
@@ -83,6 +96,9 @@ function clearGrid() {
 //Event Listeners
 isToggleClicked.addEventListener("click", toggleGrid);
 isEraserClicked.addEventListener("click", clearGrid);
+gridDiv.addEventListener("mouseenter", MouseUnclicked);
+gridCell.forEach(cell => cell.addEventListener("mousedown", MouseClicked));
+gridCell.forEach(cell => cell.addEventListener("mouseup", MouseUnclicked));
 gridCell.forEach(cell => cell.addEventListener("mouseenter", fillColor));
 colorCell.forEach(cell => cell.addEventListener("click", changeColor));
 
