@@ -62,6 +62,9 @@ function operatorPressed() {
 
 function updateDisplay() {
 	if (equal == false) {
+		/*
+		If an operator has been pressed then display numArr2, if not display numArr
+		*/
 		if (op.length == 0) {
 			if (numArr.length == 0) {
 				displayValue = "0";
@@ -79,19 +82,23 @@ function updateDisplay() {
 	displayDiv.textContent = displayValue;
 }
 
-function clearDisplay() {
-	numArr = ["0"];
-	numArr2 = ["0"];
-	op = "";
-	topDisplay.textContent = "_";
-	updateDisplay();
-}
-
 function updateTopDisplay() {
 	if (op.length != 0)
 		topDisplay.textContent = numArr.join('') + " " + op;
 	else 
 		topDisplay.textContent += numArr2.join('') + " =";
+}
+
+function clearDisplay() {
+	numArr = ["0"];
+	numArr2 = ["0"];
+	op = "";
+	clearTopDisplay()
+	updateDisplay();
+}
+
+function clearTopDisplay() {
+	topDisplay.textContent = "_";
 }
 
 function deleteNum() {
@@ -128,6 +135,7 @@ function evaluate() {
 	}
 
 	displayValue = String(answer);
+	console.log(displayValue);
 	equal = true;
 	updateDisplay();
 	equal = false;
@@ -137,11 +145,14 @@ function evaluate() {
 	and set numArr to answer to allow user chain operators
 	*/
 	op = "";
-	updateTopDisplay();
+
+	if (displayValue == "undefined" || displayValue == "Infinity") {
+		clearTopDisplay()
+	}
+	
 	numArr = displayValue.split(',');
 	console.log(numArr);
 	numArr2 = ["0"];
-	
 }
 
 function add(a,b) {
