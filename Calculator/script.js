@@ -5,6 +5,7 @@ const del = document.querySelector("#del");
 const clear = document.querySelector("#AC");
 const equalPressed = document.querySelector("#equal");
 const decimal = document.querySelector("#decimal");
+const topDisplay = document.querySelector(".top-display");
 
 let displayValue = "";
 let numArr = ["0"];
@@ -19,6 +20,9 @@ clear.addEventListener("click", clearDisplay);
 equalPressed.addEventListener("click", evaluate);
 
 function keyPressed() {
+	if (numArr[0] === "Infinity" || numArr[0] === "undefined") {
+		numArr = ["0"];
+	}
 	if (op.length == 0) {
 		if (numArr.length > 1 && numArr[1] == "0") {
 			numArr.pop(); // no leading 0's
@@ -40,7 +44,7 @@ function keyPressed() {
 		}
 		console.log('numArr2 = '+numArr2);
 	}
-	display();
+	updateDisplay();
 }
 
 function operatorPressed() {
@@ -53,9 +57,10 @@ function operatorPressed() {
 	}
 	op = this.id
 	console.log(op);
+	updateTopDisplay();
 }
 
-function display() {
+function updateDisplay() {
 	if (equal == false) {
 		if (op.length == 0) {
 			if (numArr.length == 0) {
@@ -78,7 +83,15 @@ function clearDisplay() {
 	numArr = ["0"];
 	numArr2 = ["0"];
 	op = "";
-	display();
+	topDisplay.textContent = "_";
+	updateDisplay();
+}
+
+function updateTopDisplay() {
+	if (op.length != 0)
+		topDisplay.textContent = numArr.join('') + " " + op;
+	else 
+		topDisplay.textContent += numArr2.join('') + " =";
 }
 
 function deleteNum() {
@@ -87,7 +100,7 @@ function deleteNum() {
 	} else {
 		numArr2.pop();
 	}
-	display();
+	updateDisplay();
 }
 
 function evaluate() {
@@ -111,12 +124,12 @@ function evaluate() {
 			answer = divide(a,b);
 			break;
 		default:
-			
+			break;
 	}
 
 	displayValue = String(answer);
 	equal = true;
-	display();
+	updateDisplay();
 	equal = false;
 
 	/*
@@ -124,9 +137,11 @@ function evaluate() {
 	and set numArr to answer to allow user chain operators
 	*/
 	op = "";
+	updateTopDisplay();
 	numArr = displayValue.split(',');
 	console.log(numArr);
 	numArr2 = ["0"];
+	
 }
 
 function add(a,b) {
@@ -145,4 +160,4 @@ function divide(a,b) {
 	return (a/b);
 }
 
-display();
+updateDisplay();

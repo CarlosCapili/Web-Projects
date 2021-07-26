@@ -27,13 +27,27 @@ div > h2 {
 
 .calc-display{
 	border: 1px solid #D5D8DC;
-	border-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	border-top: none;
 	font-size: 40px;
 	background-color: #212F3D;
 	color: #FFF;
 	text-align: right;
-	padding: 20px;
+	padding: 10px 20px;
 	margin-bottom: 10px;
+}
+
+.top-display {
+	background-color: #212F3D;
+	text-align: right;
+	padding: 5px 20px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border: 1px solid #D5D8DC;
+	border-bottom: none;
+	font-size: 25px;
+	color: #FFF;
 }
 
 .calc-keypad {
