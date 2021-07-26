@@ -44,7 +44,7 @@ div > h2 {
 	
 .buttons {
 	text-align: center;
-	font-size: 20px;
+	font-size: 22px;
 	padding: 20px;
 	border: none;
 	border-radius: 20px;
@@ -55,6 +55,14 @@ div > h2 {
 .buttons:hover {
 	background-color: #818181;
 	cursor: pointer; 
+}
+
+.operator {
+	background-color: #00b3aa;
+}
+
+.operator:hover {
+	background-color: #008f88;
 }
 
 #equal {
