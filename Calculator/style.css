@@ -8,9 +8,17 @@ html, body {
 	height: 100%;
 }
 
+body {
+	background-color: #FF8236;
+}
+
+div > h2 {
+	text-align: center;
+}
+
 .calc-container {
 	width: 500px;
-	margin: auto auto;
+	margin: 30px auto;
 	padding: 20px;
 	border: 1px solid black;
 	border-radius: 20px;

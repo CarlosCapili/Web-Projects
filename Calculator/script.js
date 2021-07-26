@@ -20,15 +20,29 @@ equalPressed.addEventListener("click", evaluate);
 function keyPressed() {
 	if (op.length == 0) {
 		numArr.push(this.id);
+		if (numArr[0] == "0") {
+			numArr.pop(); // no leading 0's
+		}
 		console.log('numArr = '+numArr);
 	} else {
 		numArr2.push(this.id);
+		if (numArr2[0] == "0") {
+			numArr2.pop(); // no leading 0's
+		}
 		console.log('numArr2 = '+numArr2);
 	}
 	display();
 }
 
 function operatorPressed() {
+	/*
+	if both num array contain value and op is already pressed,
+	evaluate the answer when another op is pressed
+	*/
+	if (numArr.length >= 1 && numArr2.length >= 1 && op.length == 1) {
+		evaluate();
+	}
+
 	op = this.id
 	console.log(op);
 }
@@ -97,12 +111,15 @@ function evaluate() {
 	equal = true;
 	display();
 	equal = false;
-	// After equals is pressed set operator pressed, and both arrays to empty
+	/*
+	After equals is pressed set operator pressed and numArr2 to empty
+	and set numArr to answer to allow user chain operators
+	*/
 	op = "";
-	numArr = [];
+	numArr = displayValue.split('');
+	//console.log(numArr);
 	numArr2 = [];
 }
-
 
 function add(a,b) {
 	return (a+b);
