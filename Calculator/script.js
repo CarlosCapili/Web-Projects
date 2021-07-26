@@ -4,11 +4,12 @@ const operator = document.querySelectorAll(".operator");
 const del = document.querySelector("#del");
 const clear = document.querySelector("#AC");
 const equalPressed = document.querySelector("#equal");
+const decimal = document.querySelector("#decimal");
 
 let displayValue = "";
-let numArr = [];
-let numArr2 = [];
-let op = ""
+let numArr = ["0"];
+let numArr2 = ["0"];
+let op = "";
 let equal = false;
 
 keypad.forEach(button => button.addEventListener("click", keyPressed));
@@ -19,15 +20,23 @@ equalPressed.addEventListener("click", evaluate);
 
 function keyPressed() {
 	if (op.length == 0) {
-		numArr.push(this.id);
-		if (numArr[0] == "0") {
+		if (numArr.length > 1 && numArr[1] == "0") {
 			numArr.pop(); // no leading 0's
+		}
+		if (numArr.length < 2 && numArr[0] == "0" && this.id !== ".") {
+			numArr[0] = this.id;
+		} else {
+			numArr.push(this.id);
 		}
 		console.log('numArr = '+numArr);
 	} else {
-		numArr2.push(this.id);
-		if (numArr2[0] == "0") {
-			numArr2.pop(); // no leading 0's
+		if (numArr2.length > 1 && numArr2[1] == "0") {
+			numArr2.pop();
+		}
+		if (numArr2.length < 2 && numArr2[0] == "0" && this.id !== ".") {
+			numArr2[0] = this.id;
+		} else {
+			numArr2.push(this.id);
 		}
 		console.log('numArr2 = '+numArr2);
 	}
@@ -35,14 +44,13 @@ function keyPressed() {
 }
 
 function operatorPressed() {
-	/*
-	if both num array contain value and op is already pressed,
-	evaluate the answer when another op is pressed
-	*/
 	if (numArr.length >= 1 && numArr2.length >= 1 && op.length == 1) {
+		/*
+		if both num array contain value and op is already pressed,
+		evaluate the answer when another op is pressed
+		*/
 		evaluate();
 	}
-
 	op = this.id
 	console.log(op);
 }
@@ -67,9 +75,8 @@ function display() {
 }
 
 function clearDisplay() {
-	displayValue = "0";
-	numArr = [];
-	numArr2 = [];
+	numArr = ["0"];
+	numArr2 = ["0"];
 	op = "";
 	display();
 }
@@ -104,21 +111,22 @@ function evaluate() {
 			answer = divide(a,b);
 			break;
 		default:
-			console.log("DID NOT PRESS AN OPERATOR!");
+			
 	}
 
 	displayValue = String(answer);
 	equal = true;
 	display();
 	equal = false;
+
 	/*
 	After equals is pressed set operator pressed and numArr2 to empty
 	and set numArr to answer to allow user chain operators
 	*/
 	op = "";
-	numArr = displayValue.split('');
-	//console.log(numArr);
-	numArr2 = [];
+	numArr = displayValue.split(',');
+	console.log(numArr);
+	numArr2 = ["0"];
 }
 
 function add(a,b) {
