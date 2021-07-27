@@ -20,27 +20,31 @@ clear.addEventListener("click", clearDisplay);
 equalPressed.addEventListener("click", evaluate);
 
 function keyPressed() {
-	if (numArr[0] === "Infinity" || numArr[0] === "undefined") {
-		numArr = ["0"];
-	}
 	if (op.length == 0) {
-		if (numArr.length > 1 && numArr[1] == "0") {
-			numArr.pop(); // no leading 0's
-		}
+		//Prevents a leading decimal, ex. 0. and not just .
 		if (numArr.length < 2 && numArr[0] == "0" && this.id !== ".") {
-			numArr[0] = this.id;
+			numArr[0] = this.id; 
 		} else {
-			numArr.push(this.id);
+			if (numArr.includes(".") == false) {
+				numArr.push(this.id);
+			}
+			if (numArr.includes(".") == true && this.id != ".") {
+				numArr.push(this.id);
+			}
 		}
 		console.log('numArr = '+numArr);
 	} else {
-		if (numArr2.length > 1 && numArr2[1] == "0") {
-			numArr2.pop();
-		}
 		if (numArr2.length < 2 && numArr2[0] == "0" && this.id !== ".") {
 			numArr2[0] = this.id;
 		} else {
-			numArr2.push(this.id);
+			if (numArr2.includes(".") == false) {
+				numArr2.push(this.id);
+			}
+			if (numArr2.includes(".") == true && this.id != ".") {
+				numArr2.push(this.id);	if (this.id == ".") {
+					containDecimal = true;
+				}
+			}	
 		}
 		console.log('numArr2 = '+numArr2);
 	}
@@ -48,7 +52,7 @@ function keyPressed() {
 }
 
 function operatorPressed() {
-	if (numArr.length >= 1 && numArr2.length >= 1 && op.length == 1) {
+	if (numArr.length >= 1 && numArr[0] != 0 && numArr2.length >= 1 && numArr2[0] != 0 && op.length == 1) {
 		/*
 		if both num array contain value and op is already pressed,
 		evaluate the answer when another op is pressed
@@ -86,7 +90,7 @@ function updateTopDisplay() {
 	if (op.length != 0)
 		topDisplay.textContent = numArr.join('') + " " + op;
 	else 
-		topDisplay.textContent += numArr2.join('') + " =";
+		topDisplay.textContent += " " + numArr2.join('') + " =";
 }
 
 function clearDisplay() {
@@ -134,6 +138,7 @@ function evaluate() {
 			break;
 	}
 
+	//Round off cetain numbers
 	displayValue = String(answer);
 	console.log(displayValue);
 	equal = true;
@@ -145,12 +150,14 @@ function evaluate() {
 	and set numArr to answer to allow user chain operators
 	*/
 	op = "";
-
-	if (displayValue == "undefined" || displayValue == "Infinity") {
+	if (displayValue == "undefined" || displayValue == "Infinity" || displayValue == "NaN") {
 		clearTopDisplay()
+		displayValue = "";
+		numArr = ["0"];
+	} else {
+		numArr = displayValue.split('');
+		updateTopDisplay();
 	}
-	
-	numArr = displayValue.split(',');
 	console.log(numArr);
 	numArr2 = ["0"];
 }

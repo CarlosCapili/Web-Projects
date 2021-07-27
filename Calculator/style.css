@@ -12,10 +12,6 @@ body {
 	background-color: #FF8236;
 }
 
-div > h2 {
-	text-align: center;
-}
-
 .calc-container {
 	width: 500px;
 	margin: 30px auto;
