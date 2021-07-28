@@ -21,21 +21,24 @@ equalPressed.addEventListener("click", evaluate);
 
 function keyPressed() {
 	if (op.length == 0) {
-		//Prevents a leading decimal, ex. 0. and not just .
-		if (numArr.length < 2 && numArr[0] == "0" && this.id !== ".") {
-			numArr[0] = this.id; 
+		if (numArr.length == 0 && this.id == ".") {
+			//If user presses decimal insert 0 into the array 
+			numArr.push("0");
+			numArr.push(this.id);
 		} else {
 			if (numArr.includes(".") == false) {
 				numArr.push(this.id);
 			}
+			//Allow only one decimal in the array
 			if (numArr.includes(".") == true && this.id != ".") {
 				numArr.push(this.id);
 			}
 		}
 		console.log('numArr = '+numArr);
 	} else {
-		if (numArr2.length < 2 && numArr2[0] == "0" && this.id !== ".") {
-			numArr2[0] = this.id;
+		if (numArr2.length == 0 && this.id == ".") {
+			numArr2.push("0");
+			numArr2.push(this.id);
 		} else {
 			if (numArr2.includes(".") == false) {
 				numArr2.push(this.id);
@@ -52,7 +55,10 @@ function keyPressed() {
 }
 
 function operatorPressed() {
-	if (numArr.length >= 1&& numArr2.length >= 1 && op.length == 1) {
+	if (numArr.length == 0) {
+		numArr.push("0");
+	}
+	if (numArr.length >= 1 && numArr2.length >= 1 && op.length == 1) {
 		/*
 		if both num array contain value and op is already pressed,
 		evaluate the answer when another op is pressed
@@ -116,12 +122,9 @@ function deleteNum() {
 
 function evaluate() {
 	if (numArr.length != 0 && numArr2.length != 0 && op.length !=0) {
-		console.log("HERE");
 		a = parseFloat(numArr.join(''));
 		b = parseFloat(numArr2.join(''));
 		let answer;
-		console.log("a = " +a);
-		console.log("b = " +b);
 	
 		switch(op) {
 			case "+":
@@ -139,29 +142,22 @@ function evaluate() {
 			default:
 				break;
 		}
-	
-		//Round off cetain numbers
+
 		displayValue = String(answer);
-		console.log(displayValue);
-		equal = true;
-		updateDisplay();
-		equal = false;
-	
-		/*
-		After equals is pressed set operator pressed and numArr2 to empty
-		and set numArr to answer to allow user chain operators
-		*/
-		op = "";
-		if (displayValue == "undefined" || displayValue == "Infinity" || displayValue == "NaN") {
-			clearTopDisplay()
-			displayValue = "0";
+
+		if (displayValue == "Infinity" || displayValue == "-Infinity" || displayValue == "NaN") {
+			displayValue = "Cannot divide by zero";
 			numArr = [];
 		} else {
 			numArr = displayValue.split('');
-			updateTopDisplay();
 		}
-		console.log(numArr);
+
+		op = "";
+		updateTopDisplay();
 		numArr2 = [];
+		equal = true;
+		updateDisplay();
+		equal = false;
 	}
 }
 
@@ -180,6 +176,5 @@ function multiply(a,b) {
 function divide(a,b) {
 	return (a/b);
 }
-
 
 updateDisplay();
