@@ -7,9 +7,9 @@ const equalPressed = document.querySelector("#equal");
 const decimal = document.querySelector("#decimal");
 const topDisplay = document.querySelector(".top-display");
 
-let displayValue = "";
-let numArr = ["0"];
-let numArr2 = ["0"];
+let displayValue = "0";
+let numArr = [];
+let numArr2 = [];
 let op = "";
 let equal = false;
 
@@ -52,7 +52,7 @@ function keyPressed() {
 }
 
 function operatorPressed() {
-	if (numArr.length >= 1 && numArr[0] != 0 && numArr2.length >= 1 && numArr2[0] != 0 && op.length == 1) {
+	if (numArr.length >= 1&& numArr2.length >= 1 && op.length == 1) {
 		/*
 		if both num array contain value and op is already pressed,
 		evaluate the answer when another op is pressed
@@ -94,8 +94,8 @@ function updateTopDisplay() {
 }
 
 function clearDisplay() {
-	numArr = ["0"];
-	numArr2 = ["0"];
+	numArr = [];
+	numArr2 = [];
 	op = "";
 	clearTopDisplay()
 	updateDisplay();
@@ -115,51 +115,54 @@ function deleteNum() {
 }
 
 function evaluate() {
-	a = parseFloat(numArr.join(''));
-	b = parseFloat(numArr2.join(''));
-	let answer;
-	console.log("a = " +a);
-	console.log("b = " +b);
-
-	switch(op) {
-		case "+":
-			answer = add(a,b);
-			break;
-		case "-":
-			answer = subtract(a,b);
-			break;
-		case "*":
-			answer = multiply(a,b);
-			break;
-		case "/":
-			answer = divide(a,b);
-			break;
-		default:
-			break;
+	if (numArr.length != 0 && numArr2.length != 0 && op.length !=0) {
+		console.log("HERE");
+		a = parseFloat(numArr.join(''));
+		b = parseFloat(numArr2.join(''));
+		let answer;
+		console.log("a = " +a);
+		console.log("b = " +b);
+	
+		switch(op) {
+			case "+":
+				answer = add(a,b);
+				break;
+			case "-":
+				answer = subtract(a,b);
+				break;
+			case "*":
+				answer = multiply(a,b);
+				break;
+			case "/":
+				answer = divide(a,b);
+				break;
+			default:
+				break;
+		}
+	
+		//Round off cetain numbers
+		displayValue = String(answer);
+		console.log(displayValue);
+		equal = true;
+		updateDisplay();
+		equal = false;
+	
+		/*
+		After equals is pressed set operator pressed and numArr2 to empty
+		and set numArr to answer to allow user chain operators
+		*/
+		op = "";
+		if (displayValue == "undefined" || displayValue == "Infinity" || displayValue == "NaN") {
+			clearTopDisplay()
+			displayValue = "0";
+			numArr = [];
+		} else {
+			numArr = displayValue.split('');
+			updateTopDisplay();
+		}
+		console.log(numArr);
+		numArr2 = [];
 	}
-
-	//Round off cetain numbers
-	displayValue = String(answer);
-	console.log(displayValue);
-	equal = true;
-	updateDisplay();
-	equal = false;
-
-	/*
-	After equals is pressed set operator pressed and numArr2 to empty
-	and set numArr to answer to allow user chain operators
-	*/
-	op = "";
-	if (displayValue == "undefined" || displayValue == "Infinity" || displayValue == "NaN") {
-		clearTopDisplay()
-		displayValue = "";
-		numArr = ["0"];
-	} else {
-		numArr = displayValue.split('');
-		updateTopDisplay();
-	}
-	console.log(numArr);
-	numArr2 = ["0"];
 }
 
 function add(a,b) {
@@ -177,5 +180,6 @@ function multiply(a,b) {
 function divide(a,b) {
 	return (a/b);
 }
+
 
 updateDisplay();
