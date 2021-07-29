@@ -19,6 +19,10 @@ del.addEventListener("click", deleteNum);
 clear.addEventListener("click", clearDisplay);
 equalPressed.addEventListener("click", evaluate);
 
+//keyboard functionality
+document.addEventListener("keydown", keyboardInput);
+
+
 function keyPressed() {
 	if (op.length == 0) {
 		if (numArr.length == 0 && this.id == ".") {
@@ -34,7 +38,6 @@ function keyPressed() {
 				numArr.push(this.id);
 			}
 		}
-		console.log('numArr = '+numArr);
 	} else {
 		if (numArr2.length == 0 && this.id == ".") {
 			numArr2.push("0");
@@ -49,7 +52,6 @@ function keyPressed() {
 				}
 			}	
 		}
-		console.log('numArr2 = '+numArr2);
 	}
 	updateDisplay();
 }
@@ -66,7 +68,6 @@ function operatorPressed() {
 		evaluate();
 	}
 	op = this.id
-	console.log(op);
 	updateTopDisplay();
 }
 
@@ -151,6 +152,10 @@ function evaluate() {
 		} else {
 			numArr = displayValue.split('');
 		}
+		
+		if (displayValue == "0") {
+			numArr = [];
+		}
 
 		op = "";
 		updateTopDisplay();
@@ -177,4 +182,31 @@ function divide(a,b) {
 	return (a/b);
 }
 
-updateDisplay();
+function keyboardInput(event) {
+		let getOperators = {
+			'/': '/',
+			'*': '*',
+			'+': '+',
+			'-': '-'
+		}
+	
+		/*
+		When keyboard button is pressed it fires the click event, enabling
+		the use of the event listeners at the beginning of the code
+		*/
+		if(!isNaN(event.key) && event.key !== ' '){
+			document.getElementById(event.key).click();
+		}
+		if (['/', '+', '-', '*'].includes(event.key)) {
+			document.getElementById(getOperators[event.key]).click();
+		}
+		if (event.key === 'Backspace') {
+			document.getElementById('del').click();	
+		}
+		if (event.key === '=' || event.key === 'Enter') {
+			document.getElementById('equal').click();	
+		}
+		if (event.key === '.') {
+			document.getElementById('.').click();	
+		}
+}
