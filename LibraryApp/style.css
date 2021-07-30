@@ -6,25 +6,94 @@
 
 body {
     font-family: 'Roboto', sans-serif;
+    background-color: rgb(255, 255, 255);
+}
+
+h1 {
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+hr {
+    border-top: 1px solid rgb(185, 185, 185);
+    margin: 15px auto;
 }
 
 .container {
+    max-width: 1000px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 20px;
 }
 
-.header-container {
+/* Input field styles */
+input[type='checkbox'] {
+    width: 26px;
+    height: 26px;
+    padding: 5px;
+    border: 1px solid rgb(185, 185, 185);
+}
+
+input[type='text'] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid rgb(185, 185, 185)
+}
+
+#title {
+    border-radius: 5px;
+}
+
+#author {
+    border-radius: 5px;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+.add-container {
     display: flex;
+    flex-direction: row;
     align-items: center;
-    background-color: #e5f8f8;
-    padding: 45px 50px;
+    justify-content: center;
+}
+
+.book-input {
+    flex-grow: 1;
+    margin-right: 20px;
+    height: 48px;
+}
+
+#submit {
+    margin-right: 0;
 }
 
 #add {
-    background: url("round_add_black_24dp.png");
-    background-color: #ffffff;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 45px;
-    height: 45px;
-    border-radius: 40px;
-    margin-left: auto;
+    position: relative;
+    top: 13px;
+    border: none;
+    background-color: rgb(26, 178, 248);
+    color: #ffffff;
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 5px;
 }
+
+#add:hover {
+    background-color: rgb(97, 205, 255);
+}
+
+/* Book container styles */
+.book-container {
+    display: flex;
+    margin-top: 50px;
+}
+
+.field {
+    flex-grow: 1;
+}
+
+
+

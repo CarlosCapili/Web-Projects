@@ -9,18 +9,43 @@
 </head>
 <body>
     <div class="container">
-        <div class="header-container">
-            <h1>My Library</h1>
-            <div id="add"></div>
+        <h1>My Library</h1>
+        <div class="input-container">
+            <form class="add-container">
+                <div class="book-input">
+                    <label for="title">Title</label><br>
+                    <input type="text" id="title" required>
+                </div>
+                
+                <div class="book-input">
+                    <label for="author">Author</label><br>
+                    <input type="text" id="author" required>
+                </div>
+                
+                <div class="book-input">
+                    <label for="read-status">Read Status</label><br>
+                    <input type="checkbox" id="read-status">
+                    
+                </div>
+                <div class="book-input" id="submit">
+                    <button id="add">Add</button>
+                </div>
+            </form>
         </div>
     
-        <div class="book-container">
-    
+        <div class="library-container">
+            <div class="book-container">
+                <h4 class="field">Title</h4>
+                <h4 class="field">Author</h4>
+                <h4 class="field">Status</h4>
+            </div>
+            <hr>
         </div>
+       
     </div>
 
 
-
+  
     
     <script src="script.js"></script>
 </body>
