@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    background-color: #e5f8f8;
+    padding: 45px 50px;
+}
+
+#add {
+    background: url("round_add_black_24dp.png");
+    background-color: #ffffff;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 45px;
+    height: 45px;
+    border-radius: 40px;
+    margin-left: auto;
+}
