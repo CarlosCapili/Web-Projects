@@ -9,8 +9,12 @@ const lib = document.querySelector(".book");
 lib.addEventListener('click', (e) => {
   console.log(e.target);
   
-  if(e.target.classList.contains("btn")){
+  if(e.target.classList.contains("remove")){
     removeBook(e);
+  }
+
+  if(e.target.classList.contains("toggle")) {
+    changeStatus(e);
   }
 });
 
@@ -26,6 +30,13 @@ function Book(title, author, status) {
   this.author = author;
   this.status = status; //true or false
   this.index = -1;
+}
+
+Book.prototype.toggleStatus = function() {
+  if (this.status === "Read")
+    this.status = "Not Read";
+  else 
+    this.status = "Read";
 }
 
 function addBookToLibrary() {
@@ -49,15 +60,21 @@ function addBookToLibrary() {
     author.textContent = myLibrary[lastEle].author;
 
     const status = document.createElement('td');
+    const toggleBtn = document.createElement('button');
     if (myLibrary[lastEle].status) 
-      status.textContent = "Read";
+      toggleBtn.textContent = "Read";
     else 
-      status.textContent = "Not Read";
+      toggleBtn.textContent = "Not Read";
+      
+    toggleBtn.classList.add("btn");
+    toggleBtn.classList.add("toggle");
+    status.appendChild(toggleBtn);
 
     const deleteTd = document.createElement('td');
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = "Remove";
     deleteBtn.classList.add("btn");
+    deleteBtn.classList.add("remove");
     deleteTd.append(deleteBtn);
    
     row.appendChild(title);
@@ -67,8 +84,7 @@ function addBookToLibrary() {
     lib.appendChild(row);
   
     return true;
-  }
-  else {
+  } else {
     alert('Title and Author must be filled out!');
   }
   return false;
@@ -80,16 +96,35 @@ function clearInputs() {
 }
 
 function removeBook(e) {
+  const index = findBook(e);
+  //remove from array and page
+  myLibrary.splice(index,1); 
+  e.target.parentNode.parentNode.remove(); 
+  console.log(myLibrary);
+}
+
+function changeStatus(e) {
+  const index = findBook(e);
+  myLibrary[index].toggleStatus();
+
+  //Update status on page
+  if (e.target.textContent == "Read") {
+    e.target.textContent = "Not Read";
+  } else {
+    e.target.textContent = "Read";
+  }
+  console.log(myLibrary[index].status);
+}
+
+function findBook(e) {
   const index = e.target.parentNode.parentNode.dataset.index
   console.log(index);
 
-  //linear search
-  for (let i=0; i<myLibrary.length; i++) {
-    if(myLibrary[i].index == index)
-    myLibrary.splice(i, 1); //remove book object at that index
-    e.target.parentNode.parentNode.remove(); //remove from page
-  }
-
-  console.log(myLibrary);
+    //linear search
+    for (let i=0; i<myLibrary.length; i++) {
+      if(myLibrary[i].index == index)
+        return i; //return index of object in array 
+    }
+    return;
 }
 
