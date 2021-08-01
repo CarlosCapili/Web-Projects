@@ -47,29 +47,39 @@ function addBookToLibrary() {
 
     let lastEle = myLibrary.length-1;
     const row = document.createElement('tr');
+
+    //set index attribute to lastEle to give each book obj and tr tag a unique identifier
     row.dataset.index = lastEle;
-    //set index attribute to lastEle to give each book obj a unique identifier
     newBook.index = lastEle; 
 
     console.log("newBook.index = " +newBook.index);
 
+    //# column
+    const bookNum = document.createElement('td');
+    bookNum.classList.add("bookNum");
+    bookNum.textContent = lastEle+1; //starts at 1
+
+    //title column
     const title = document.createElement('td');
     title.textContent = myLibrary[lastEle].title;
 
+    //author column
     const author = document.createElement('td');
     author.textContent = myLibrary[lastEle].author;
 
+    //status column
     const status = document.createElement('td');
     const toggleBtn = document.createElement('button');
     if (myLibrary[lastEle].status) 
       toggleBtn.textContent = "Read";
     else 
       toggleBtn.textContent = "Not Read";
-      
+
     toggleBtn.classList.add("btn");
     toggleBtn.classList.add("toggle");
     status.appendChild(toggleBtn);
 
+    //delete button 
     const deleteTd = document.createElement('td');
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = "Remove";
@@ -77,6 +87,8 @@ function addBookToLibrary() {
     deleteBtn.classList.add("remove");
     deleteTd.append(deleteBtn);
    
+    //append row to table
+    row.append(bookNum);
     row.appendChild(title);
     row.appendChild(author);
     row.appendChild(status);
@@ -100,6 +112,14 @@ function removeBook(e) {
   //remove from array and page
   myLibrary.splice(index,1); 
   e.target.parentNode.parentNode.remove(); 
+
+  //change # as books are removed from library
+  let num = 1;
+  const numDiv = document.querySelectorAll(".bookNum");
+  numDiv.forEach(e => {
+    e.textContent = num++;
+  });
+  
   console.log(myLibrary);
 }
 
