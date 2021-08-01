@@ -32,7 +32,7 @@ th, td {
 }
 
 th:nth-child(1), th:nth-child(2), td:nth-child(1), td:nth-child(2) {
-    width: 40%;;
+    width: 25%;;
 }
 
 .container {
@@ -86,20 +86,25 @@ input:focus, textarea:focus, select:focus{
     margin-right: 0;
 }
 
-#add {
-    position: relative;
-    top: 13px;
+.btn {
     border: none;
     background-color: rgb(26, 178, 248);
     color: #ffffff;
     padding: 10px 20px;
-    width: 100%;
     border-radius: 5px;
 }
 
-#add:hover {
+.btn:hover {
     background-color: rgb(97, 205, 255);
 }
+
+#add {
+    position: relative;
+    top: 13px;
+    width: 100%;
+}
+
+
 
 /* Book container styles */
 .library-container {
