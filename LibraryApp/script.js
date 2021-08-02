@@ -12,6 +12,7 @@ lib.addEventListener('click', (e) => {
   
   if(e.target.classList.contains("remove")){
     removeBook(e);
+    updateIndex();
   }
   if(e.target.classList.contains("toggle")) {
     changeStatus(e);
@@ -57,7 +58,7 @@ function newBook(title, auth, status, index) {
     let lastEle = myLibrary.length-1;
     bookAmt.textContent = `${lastEle+1} books`;
     const row = document.createElement('tr');
-
+    row.classList.add("index");
     //set index attribute to lastEle to give each book obj and tr tag a unique identifier
     row.dataset.index = lastEle;
     newBook.index = lastEle; 
@@ -157,6 +158,15 @@ function findBook(e) {
         return i; //return index of object in array 
     }
     return;
+}
+
+function updateIndex() {
+  const index = document.querySelectorAll(".index");
+  let num = 0;
+  index.forEach(e => {
+    myLibrary[num].index = num; //update index in book obj
+    e.dataset.index = num++; //update index in html
+  });
 }
 
 function saveLibrary() {
