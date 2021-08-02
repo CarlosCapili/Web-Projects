@@ -62,6 +62,7 @@ function addBookToLibrary() {
     //title column
     const title = document.createElement('td');
     title.textContent = myLibrary[lastEle].title;
+    title.classList.add("title");
 
     //author column
     const author = document.createElement('td');

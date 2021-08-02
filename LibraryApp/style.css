@@ -5,13 +5,15 @@
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: rgb(255, 255, 255);
+    font-family: 'Raleway', sans-serif;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgb(7, 7, 7) 71%,rgb(31, 48, 202) 89%, rgb(34, 123, 206) 100%);
+    color: #ffffff;
 }
 
 h1 {
-    margin-top: 50px;
-    margin-bottom: 40px;
+    font-weight: bold;
+    font-size: 55px;
 }
 
 table {
@@ -20,23 +22,40 @@ table {
     table-layout: fixed;
 }
 
-tr {
+tbody tr {
     border-bottom: 1px solid rgb(185, 185, 185);
 }
 
-th, td {
+table > tr:hover {
+    background-color: rgb(20, 20, 20);
+}
+
+th {
     text-align: left;
-    padding: 20px 0;
-    padding-right: 40px;
+    padding: 12px 11px;
+    font-size: 13px;
+    color: #cacaca;
+}
+
+td {
+    color: #cacaca;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+    padding: 12px 11px;
     word-wrap: break-word;
 }
 
 th:nth-child(1), td:nth-child(1) {
-    width:5%;
+    width:4%;
 }
 
-th:nth-child(2), th:nth-child(3), td:nth-child(2), td:nth-child(3) {
-    width: 25%;;
+th:nth-child(2), td:nth-child(2) {
+    width: 30%;
+}
+
+th:nth-child(3), td:nth-child(3) {
+    width: 25%;
 }
 
 .container {
@@ -45,6 +64,12 @@ th:nth-child(2), th:nth-child(3), td:nth-child(2), td:nth-child(3) {
     margin-right: auto;
     margin-left: auto;
     padding: 20px;
+}
+
+/* Header-container styles */
+.header-container {
+    margin-top: 50px;
+    margin-bottom: 60px;
 }
 
 /* Input field styles */
@@ -90,36 +115,41 @@ input:focus, textarea:focus, select:focus{
     margin-right: 0;
 }
 
+/* Button styles */
 .btn {
     border: none;
-    background-color: rgb(26, 178, 248);
-    color: #ffffff;
+    color: #e4e4e4;
     padding: 10px 20px;
     border-radius: 5px;
 }
 
 .btn:hover {
-    background-color: rgb(97, 205, 255);
+    cursor: pointer;
+}
+
+.remove {
+    background-color: rgb(34, 50, 138);
+}
+
+.toggle {
+    background-color: rgb(31, 87, 43);
 }
 
 #add {
     position: relative;
+    background-color: rgb(37, 116, 119);
     top: 13px;
     width: 100%;
 }
+
 
 /* Book container styles */
 .library-container {
     margin-top: 40px;
 }
 
-.book-container {
-    display: flex;
-    margin-top: 50px;
-}
-
-.field {
-    flex-grow: 1;
+.title {
+    color: #ffffff;
 }
 
 
