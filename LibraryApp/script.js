@@ -4,6 +4,7 @@ const titleInput = document.querySelector('#title');
 const authInput = document.querySelector("#author");
 const readStatus = document.querySelector("#read-status");
 const addClicked = document.querySelector("#add");
+const bookAmt = document.querySelector("#libBook");
 const lib = document.querySelector(".book");
 
 lib.addEventListener('click', (e) => {
@@ -12,40 +13,49 @@ lib.addEventListener('click', (e) => {
   if(e.target.classList.contains("remove")){
     removeBook(e);
   }
-
   if(e.target.classList.contains("toggle")) {
     changeStatus(e);
   }
+
+  saveLibrary();
 });
 
 addClicked.addEventListener('click', (e) => {
   e.preventDefault(); //prevent page refresh when add btn is clicked
   addBookToLibrary();
-  clearInputs()
-
+  saveLibrary(); //saves library to local storage
+  clearInputs();
 });
 
-function Book(title, author, status) {
+function Book(title, author, status, index) {
   this.title = title;
   this.author = author;
   this.status = status; //true or false
-  this.index = -1;
+  this.index = -1; //will be set after object is created
 }
 
 Book.prototype.toggleStatus = function() {
-  if (this.status === "Read")
-    this.status = "Not Read";
+  if (this.status === true)
+    this.status = false;
   else 
-    this.status = "Read";
+    this.status = true;
 }
 
 function addBookToLibrary() {
-  if (titleInput.value != "" && authInput.value != "") {
+  let title = titleInput.value;
+  let auth = authInput.value;
+  let status = readStatus.checked;
+  newBook(title, auth, status);
+}
 
-    const newBook = new Book(titleInput.value, authInput.value, readStatus.checked);
+function newBook(title, auth, status, index) {
+  if (title != "" && auth != "") {
+
+    const newBook = new Book(title, auth, status);
     myLibrary.push(newBook);
 
     let lastEle = myLibrary.length-1;
+    bookAmt.textContent = `${lastEle+1} books`;
     const row = document.createElement('tr');
 
     //set index attribute to lastEle to give each book obj and tr tag a unique identifier
@@ -60,16 +70,16 @@ function addBookToLibrary() {
     bookNum.textContent = lastEle+1; //starts at 1
 
     //title column
-    const title = document.createElement('td');
-    title.textContent = myLibrary[lastEle].title;
-    title.classList.add("title");
+    const bookTitle = document.createElement('td');
+    bookTitle.textContent = myLibrary[lastEle].title;
+    bookTitle.classList.add("title");
 
     //author column
-    const author = document.createElement('td');
-    author.textContent = myLibrary[lastEle].author;
+    const bookAuthor = document.createElement('td');
+    bookAuthor.textContent = myLibrary[lastEle].author;
 
     //status column
-    const status = document.createElement('td');
+    const bookStatus = document.createElement('td');
     const toggleBtn = document.createElement('button');
     if (myLibrary[lastEle].status) 
       toggleBtn.textContent = "Read";
@@ -78,7 +88,7 @@ function addBookToLibrary() {
 
     toggleBtn.classList.add("btn");
     toggleBtn.classList.add("toggle");
-    status.appendChild(toggleBtn);
+    bookStatus.appendChild(toggleBtn);
 
     //delete button 
     const deleteTd = document.createElement('td');
@@ -90,9 +100,9 @@ function addBookToLibrary() {
    
     //append row to table
     row.append(bookNum);
-    row.appendChild(title);
-    row.appendChild(author);
-    row.appendChild(status);
+    row.appendChild(bookTitle);
+    row.appendChild(bookAuthor);
+    row.appendChild(bookStatus);
     row.appendChild(deleteTd);
     lib.appendChild(row);
   
@@ -120,7 +130,7 @@ function removeBook(e) {
   numDiv.forEach(e => {
     e.textContent = num++;
   });
-  
+  bookAmt.textContent = `${myLibrary.length} books`;
   console.log(myLibrary);
 }
 
@@ -149,3 +159,31 @@ function findBook(e) {
     return;
 }
 
+function saveLibrary() {
+  let books = [];
+
+  for (let i=0; i<myLibrary.length; i++) {
+    let book = myLibrary[i];
+    let bookInfo = {
+      "title" : book.title,
+      "author" : book.author,
+      "status" : book.status,
+      "index" : book.index
+    };
+    books.push(bookInfo);
+  }
+  localStorage.setItem("books", JSON.stringify(books));
+}
+
+function loadLibrary() {
+  if (localStorage.getItem("books") != null) {
+    let books = JSON.parse(localStorage.getItem("books"));
+    for (let i=0; i<books.length; i++) {
+      let book = books[i];
+      
+      newBook(book.title, book.author, book.status, book.index);
+    }
+  }
+}
+
+ loadLibrary();

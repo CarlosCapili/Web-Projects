@@ -12,20 +12,24 @@ html {
 body {
     height: 100%;
     font-family: 'Raleway', sans-serif;
-    background: rgb(2,0,36);
-    background: linear-gradient(0deg, rgb(7, 7, 7) 71%,rgb(21, 37, 182) 73%, rgb(15, 85, 151) 100%) no-repeat;
+    background: rgb(15, 15, 15);
     color: #ffffff;
 }
 
 h1 {
     font-weight: bold;
-    font-size: 55px;
+    font-size: 65px;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     table-layout: fixed;
+}
+
+label {
+    font-size: 13px;
+    font-weight: bold;
 }
 
 tbody tr {
@@ -70,13 +74,17 @@ th:nth-child(3), td:nth-child(3) {
     max-width: 1000px;
     margin-right: auto;
     margin-left: auto;
-    padding: 20px;
+    padding: 5px 20px;
 }
 
-/* Header-container styles */
+/* Header styles */
+.header-styler {
+    background: rgb(15, 9, 190);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,13,159,1) 64%, rgba(22,39,214,1) 100%);
+}
 .header-container {
     margin-top: 50px;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
 /* Input field styles */
@@ -151,14 +159,10 @@ input:focus, textarea:focus, select:focus{
 
 /* Book container styles */
 .library-container {
-    margin-top: 40px;
+    margin-top: 60px;
 }
 
 .title {
     color: #ffffff;
 }
-
-
-
-
 

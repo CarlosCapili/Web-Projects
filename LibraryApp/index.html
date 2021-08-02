@@ -8,41 +8,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <div class="header-container">
-            <h1>My Library</h1>
-            <div class="stats-container">
-              <h4>0 books</h4>  
+    <div class="main-container">
+        <div class="header-styler">
+            <div class="container">
+                <div class="header-container">
+                    <h1>My Library</h1>
+                    <div class="stats-container">
+                    <br>
+                    <h4 id="libBook">0 books</h4>  
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="input-container">
+                    <form class="add-container" action="">
+                        <div class="book-input">
+                            <label for="title">TITLE</label><br><br>
+                            <input type="text" id="title" required>
+                        </div>
+                        <div class="book-input">
+                            <label for="author">AUTHOR</label><br><br>
+                            <input type="text" id="author" required>
+                        </div>
+                        <div class="book-input">
+                            <label for="read-status">STATUS</label><br><br>
+                            <input type="checkbox" id="read-status">
+                        </div>
+                        <div class="book-input" id="submit">
+                            <br><button type="submit" class="btn" id="add">Add</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="input-container">
-            <form class="add-container" action="">
-                <div class="book-input">
-                    <label for="title">Title</label><br>
-                    <input type="text" id="title" required>
-                </div>
-                <div class="book-input">
-                    <label for="author">Author</label><br>
-                    <input type="text" id="author" required>
-                </div>
-                <div class="book-input">
-                    <label for="read-status">Status</label><br>
-                    <input type="checkbox" id="read-status">
-                </div>
-                <div class="book-input" id="submit">
-                    <button type="submit" class="btn" id="add">Add</button>
-                </div>
-            </form>
-        </div>
-        <div class="library-container">
-            <table class="book">
-                <tr>
-                    <th>#</th>
-                    <th>TITLE</th>
-                    <th>AUTHOR</th>  
-                    <th>STATUS</th>     
-                </tr>
-            </table>
+        <div class="container">
+            <div class="library-container">
+                <table class="book">
+                    <tr>
+                        <th>#</th>
+                        <th>TITLE</th>
+                        <th>AUTHOR</th>  
+                        <th>STATUS</th>     
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
