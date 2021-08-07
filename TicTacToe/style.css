@@ -25,4 +25,10 @@ h1 {
 .cell {
     border-top: 1px solid black;
     border-right: 1px solid black;
+    text-align: center;
+    font-size: 40px;
+}
+
+.cell:hover {
+    background-color: rgb(158, 204, 206);
 }
