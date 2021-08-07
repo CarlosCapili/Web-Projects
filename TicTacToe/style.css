@@ -32,3 +32,8 @@ h1 {
 .cell:hover {
     background-color: rgb(158, 204, 206);
 }
+
+.displayBoard {
+    margin: 20px 0;
+    text-align: center;
+}

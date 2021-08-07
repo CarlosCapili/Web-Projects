@@ -21,6 +21,17 @@ const gameBoard = (() => {
 //Controls the display logic
 const displayController = (() => {
     const gameCell = document.querySelectorAll('.cell');
+
+    const gameOver = (player, win) => {
+        const gameBoardDiv = document.querySelector('.displayBoard');
+        if (win) {
+            gameBoardDiv.textContent = `Player ${player.getPlayer()} wins!`;
+        }
+        else {
+            gameBoardDiv.textContent = 'Tie game!';
+        }
+       
+    }
  
     const updateGrid = () => {
         let grid = gameBoard.getGrid();
@@ -30,7 +41,8 @@ const displayController = (() => {
     }
 
     return {
-        updateGrid
+        updateGrid,
+        gameOver
     };
 
 })();
@@ -78,50 +90,56 @@ const gameController = (() => {
     const checkWin = (player) => {
         let grid = gameBoard.getGrid();
         let win = false;
+
         //horizontal win
-        if (grid[0] == grid[1] && grid[0] == grid[2]) {
+        if (grid[0] != '' && grid[0] == grid[1] && grid[0] == grid[2]) {
             //first row
             win = true;
+            console.log('win 0');
         } 
-        else if (grid[3] == grid[4] && grid[3] == grid[5]) {
+        else if (grid[3] != '' && grid[3] == grid[4] && grid[3] == grid[5]) {
             //second row
             win = true;
+            console.log('win 1');
         }
-        else if (grid[6] == grid[7] && grid[6] == grid[8]) {
+        else if (grid[6] != '' && grid[6] == grid[7] && grid[6] == grid[8]) {
             //third row
             win = true;
+            console.log('win 2');
         }
 
         //vertical win
-        if (grid[0] == grid[3] && grid[0] == grid[6]) {
+        if (grid[0] != '' && grid[0] == grid[3] && grid[0] == grid[6]) {
             //first column
             win = true;
+            console.log('win 3');
         }
-        else if (grid[1] == grid[4] && grid[1] == grid[7]) {
+        else if (grid[1] != '' && grid[1] == grid[4] && grid[1] == grid[7]) {
             //second column
             win = true;
+            console.log('win 4');
         } 
-        else if (grid[2] == grid[5] && grid[2] == grid[8]) {
+        else if (grid[2] != '' && grid[2] == grid[5] && grid[2] == grid[8]) {
             //third column
             win = true;
+            console.log('win 5');
         }
         
         //diagonal win
-        if (grid[0] == grid[4] && grid[0] == grid[8]){
-            win = true;
-        }
-        if (grid[2] == grid[4] && grid[2] == grid[6]) {
-            win = true;
+        if (grid[4] != '') {
+            if (grid[0] == grid[4] && grid[0] == grid[8]){
+                win = true;
+                console.log('win 6');
+            }
+            if (grid[2] == grid[4] && grid[2] == grid[6]) {
+                win = true;
+                console.log('win 7');
+            }
         }
 
-        if (win == true) {
-            console.log(`Player ${player.getPlayer()} wins!`);
+        if (win == true || (turns == 9 && win == false)) {
             gameOver = true;
-        }
-
-        if(turns == 9 && win == false) {
-            console.log('Tie game!');
-            gameOver = true;
+            displayController.gameOver(player, win);
         }
     }
 
