@@ -21,16 +21,31 @@ const gameBoard = (() => {
 //Controls the display logic
 const displayController = (() => {
     const gameCell = document.querySelectorAll('.cell');
+    const restartBtn = document.querySelector('#restart');
+    const gameBoardDiv = document.querySelector('.displayBoard');
+    
+    restartBtn.addEventListener('click', (e) => {
+        reset();
+    });
 
+    const reset = () => {
+        gameBoard.resetGrid();
+        gameController.reset();
+        updateGrid();
+        clearMessage();
+    }
+    
     const gameOver = (player, win) => {
-        const gameBoardDiv = document.querySelector('.displayBoard');
         if (win) {
             gameBoardDiv.textContent = `Player ${player.getPlayer()} wins!`;
         }
         else {
             gameBoardDiv.textContent = 'Tie game!';
         }
-       
+    }
+
+    const clearMessage = () => {
+        gameBoardDiv.textContent = '';
     }
  
     const updateGrid = () => {
@@ -52,9 +67,17 @@ const displayController = (() => {
 const gameController = (() => {
     const playerOne = Player("X");
     const playerTwo = Player("O");
+
     let playerTurn = true; // true means its X turn and false is O turn
     let turns = 0; //keeps track of how many turns have been played
     let gameOver = false;
+
+
+    const reset = () => {
+        playerTurn = true;
+        turns = 0;
+        gameOver = false;
+    }
 
     const playerClicked = (e) => {
         if (gameOver == false) {
@@ -70,8 +93,8 @@ const gameController = (() => {
             }
     
             if (grid[e.target.id] == '') {
-                e.target.textContent = player.getPlayer();
                 gameBoard.setGrid(e.target.id, player.getPlayer());
+                displayController.updateGrid();
                 console.log(gameBoard.getGrid());
                 console.log(player.getPlayer());
                 playerTurn = !playerTurn;
@@ -143,10 +166,16 @@ const gameController = (() => {
         }
     }
 
+    
+
     const gameCell = document.querySelectorAll('.cell');
     gameCell.forEach(cell => {
         cell.addEventListener('click', playerClicked);
     });
+
+    return {
+        reset
+    };
 
 })();
 
