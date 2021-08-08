@@ -1,4 +1,4 @@
-Whats poppin beta male specimen. If you want to see them just click on the hyperlinks.
+Slowly learning. If you want to see them just click on the hyperlinks you betas.
 
 1. Tribute Page 
 2. Survey 
