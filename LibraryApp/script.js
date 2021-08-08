@@ -20,7 +20,6 @@ lib.addEventListener('click', (e) => {
   if(e.target.classList.contains("toggle")) {
     changeStatus(e);
   }
-
   saveLibrary();
 });
 
