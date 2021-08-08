@@ -1,4 +1,4 @@
-Some projects i like to work on. If you want to see them just click on the hyperlinks.
+Whats poppin beta male specimen. If you want to see them just click on the hyperlinks.
 
 1. Tribute Page 
 2. Survey 
