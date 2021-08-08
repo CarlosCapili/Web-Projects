@@ -1,3 +1,6 @@
+//Last updated: Aug 8, 2021
+//Carlos Capili
+
 let myLibrary = [];
 
 const titleInput = document.querySelector('#title');
@@ -153,7 +156,7 @@ function changeStatus(e) {
 function findBook(e) {
   const index = e.target.parentNode.parentNode.dataset.index
   console.log(index);
-  
+
     //linear search
     for (let i=0; i<myLibrary.length; i++) {
       if(myLibrary[i].index == index)
