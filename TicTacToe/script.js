@@ -1,6 +1,5 @@
 const Player = (player) => {
     const getPlayer = () => player;
-
     return {getPlayer}
 }
 
@@ -24,7 +23,7 @@ const displayController = (() => {
     const restartBtn = document.querySelector('#restart');
     const gameBoardDiv = document.querySelector('.displayBoard');
     
-    restartBtn.addEventListener('click', (e) => {
+    restartBtn.addEventListener('click', () => {
         reset();
     });
 
@@ -35,7 +34,7 @@ const displayController = (() => {
         clearMessage();
     }
     
-    const gameOver = (player, win) => {
+    const displayWinner = (player, win) => {
         if (win) {
             gameBoardDiv.textContent = `Player ${player.getPlayer()} wins!`;
         }
@@ -57,7 +56,7 @@ const displayController = (() => {
 
     return {
         updateGrid,
-        gameOver
+        displayWinner
     };
 
 })();
@@ -72,6 +71,12 @@ const gameController = (() => {
     let turns = 0; //keeps track of how many turns have been played
     let gameOver = false;
 
+    const gameCell = document.querySelectorAll('.cell');
+    gameCell.forEach(cell => {
+        cell.addEventListener('click', (e) => {
+            playerClicked(e);
+        });
+    });
 
     const reset = () => {
         playerTurn = true;
@@ -82,34 +87,26 @@ const gameController = (() => {
     const playerClicked = (e) => {
         if (gameOver == false) {
             let grid = gameBoard.getGrid();
-            console.log(e.target.id);
-            let player;
+            let cell = e.target.id;
+            let player = currentPlayer();
     
-            if (playerTurn == true) {
-                player = playerOne;
-            } 
-            else {
-                player = playerTwo;
-            }
-    
-            if (grid[e.target.id] == '') {
-                gameBoard.setGrid(e.target.id, player.getPlayer());
+            if (grid[cell] == '') {
+                gameBoard.setGrid(cell, player.getPlayer());
                 displayController.updateGrid();
-                console.log(gameBoard.getGrid());
-                console.log(player.getPlayer());
                 playerTurn = !playerTurn;
                 turns++;
             }
-    
+            //Check if win occurs after 5 turns
             if (turns >= 5) {
-                console.log('5 turns have past');
                 checkWin(player);
             }
         }
-
     }
 
-    //Check if win occurs after 5 turns
+    const currentPlayer = () => {
+        return (playerTurn ? playerOne: playerTwo);
+    }
+
     const checkWin = (player) => {
         let grid = gameBoard.getGrid();
         let win = false;
@@ -162,16 +159,9 @@ const gameController = (() => {
 
         if (win == true || (turns == 9 && win == false)) {
             gameOver = true;
-            displayController.gameOver(player, win);
+            displayController.displayWinner(player, win);
         }
     }
-
-    
-
-    const gameCell = document.querySelectorAll('.cell');
-    gameCell.forEach(cell => {
-        cell.addEventListener('click', playerClicked);
-    });
 
     return {
         reset
