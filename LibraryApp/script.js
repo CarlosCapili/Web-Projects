@@ -28,18 +28,20 @@ addClicked.addEventListener('click', (e) => {
   clearInputs();
 });
 
-function Book(title, author, status, index) {
-  this.title = title;
-  this.author = author;
-  this.status = status; //true or false
-  this.index = -1; //will be set after object is created
-}
+class Book {
+  constructor(title, author, status, index) {
+    this.title = title;
+    this.author = author;
+    this.status = status; //true or false
+    this.index = -1; //will be set after object is created
+  }
 
-Book.prototype.toggleStatus = function() {
-  if (this.status === true)
+  toggleStatus() {
+    if (this.status === true)
     this.status = false;
-  else 
+    else 
     this.status = true;
+  }
 }
 
 function addBookToLibrary() {
