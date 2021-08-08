@@ -7,4 +7,4 @@
 7. Rock Paper Scissors - https://carloscapili.github.io/Web-Projects/Rock-Paper-Scissors
 8. SketchPad - https://carloscapili.github.io/Web-Projects/SketchPad
 9. Library - https://carloscapili.github.io/Web-Projects/LibraryApp
-10. ic Tac Toe - https://carloscapili.github.io/Web-Projects/TicTacToe
+10. Tic Tac Toe - https://carloscapili.github.io/Web-Projects/TicTacToe
