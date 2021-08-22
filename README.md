@@ -10,4 +10,4 @@ Slowly learning. If you want to see them just click on the hyperlinks you betas.
 8. SketchPad - [Click here](https://carloscapili.github.io/Web-Projects/SketchPad)
 9. Library - [Click here](https://carloscapili.github.io/Web-Projects/LibraryApp)
 10. Tic Tac Toe - [Click here](https://carloscapili.github.io/Web-Projects/TicTacToe)
-11. IN-PROGRESS* Restaurant Page - [Click here](https://carloscapili.github.io/Web-Projects/RestaurantPage/dist/)
+11. IN-PROGRESS* Restaurant Page - [Click here](https://carloscapili.github.io/Web-Projects/RestaurantPage)
