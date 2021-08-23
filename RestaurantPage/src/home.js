@@ -1,4 +1,4 @@
-export function createNav() {
+function createNav() {
     const divBar = document.createElement('div');
     divBar.classList.add('bar');
 
@@ -25,7 +25,7 @@ export function createNav() {
     return divBar;
 }
 
-export function createTitleBar() {
+function createTitleBar() {
     const mainDiv = document.createElement('div');
     mainDiv.setAttribute('id', 'about');
 
@@ -47,7 +47,7 @@ export function createTitleBar() {
     return mainDiv;
 }
 
-export function createFooter() {
+function createFooter() {
     const footerTag = document.createElement('footer');
     footerTag.classList.add('bar');
 
@@ -57,4 +57,11 @@ export function createFooter() {
     footerTag.appendChild(pTag);
 
     return footerTag;
+}
+
+export default function loadHomePage() {
+    const main = document.querySelector("#content");
+    main.appendChild(createNav());
+    main.appendChild(createTitleBar());
+    main.appendChild(createFooter());
 }

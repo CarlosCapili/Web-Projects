@@ -1,6 +1,3 @@
-import  { createNav, createTitleBar, createFooter } from './home';
+import loadHomePage from './home';
 
-const content = document.querySelector('#content');
-content.appendChild(createNav());
-content.appendChild(createTitleBar());
-content.appendChild(createFooter());
+content.appendChild(loadHomePage());
