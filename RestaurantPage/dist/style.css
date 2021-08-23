@@ -6,25 +6,23 @@
 
 body {
     color: #ffffff;
-    background-color: #232d4b;
     background-image: url('restaurant.jpg');
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
-  
 }
 
 h1 {
     font-family: 'Libre Baskerville', serif;
     text-align: center;
-    font-size: 40px;
+    font-size: 60px;
 }
 
 button {
     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     margin: 0px 20px;;
-    color: #e9c87b;
+    color: #ffffff;
     background: none;
     border: none;
 }
@@ -34,11 +32,59 @@ button:hover {
     color: #dd9e0c;
 }
 
-#nav-bar {
-    margin: 20px 0px;
+#content {
+    /* margin: 30px */
+}
+
+/* nav bar styles */ 
+.bar {
+    font-family: 'Montserrat', sans-serif;
+    padding: 35px;
+    background: rgba(5,5,5,0.8);
+    margin-bottom: 40px;
+    border-bottom: 1px solid #e9c87b;
     text-align: center;
 }
 
-#content {
-    margin: 30px
+footer.bar {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0;
+    width: 100%;
+    border-top: 1px solid #e9c87b;
+    border-bottom: none;
+}
+
+#name {
+    margin-bottom: 30px;
+}
+
+/* Title and about section styles */
+#about {
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    color: #ffffff;
+    background: rgba(5,5,5,0.8); 
+    border-radius: 10px;
+    max-width: 750px;
+    height: 500px;
+    margin: 0px auto;
+    padding: 30px;
+    text-align: center;
+}
+
+#name {
+    margin-top: 120px;
+}
+
+#reserve {
+    margin-top: 40px;
+    padding: 15px;
+    background-color: #a77d1b;
+    border-radius: 5px;
+}
+
+#reserve:hover {
+    color:#ffffff;
+    background-color: #8d6302;
 }
