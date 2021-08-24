@@ -1,5 +1,6 @@
 import loadMainpage from './main';
 import loadHomepage from './home';
+import loadMenupage from './menu';
 
 loadMainpage();
 loadHomepage(); //default load
@@ -14,6 +15,7 @@ function tabClicked(e) {
     switch(tab) {
         case "menu":
             console.log(tab);
+            loadMenupage();
             break;
         case "contact":
             console.log(tab);
