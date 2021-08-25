@@ -49,8 +49,6 @@ footer.bar {
     width: 100%;
     border-top: 1px solid #e9c87b;
     border-bottom: none;
-    position: absolute;
-    bottom: 0;
 }
 
 #name {
@@ -58,18 +56,21 @@ footer.bar {
 }
 
 #content {
-    position: relative;
-    min-height: 100vh;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* Title and about section styles */
 .about {
-    position: relative;
     color: #ffffff;
     background: rgba(5,5,5,0.8); 
-    max-width: 750px;
-    height: 700px;
-    margin: 0px auto;
+    border-radius: 10px;
+    width: 750px;
+    height: 500px;
+    margin: 0 auto;
     padding: 40px;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
