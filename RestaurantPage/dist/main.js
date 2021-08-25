@@ -20,6 +20,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
+/***/ "./src/contact.js":
+/*!************************!*\
+  !*** ./src/contact.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ loadContactpage)\n/* harmony export */ });\nfunction createContactpage() {\n    const mainDiv = document.createElement(\"div\");\n    mainDiv.classList.add(\"about\");\n\n    const contact = document.createElement(\"h2\");\n    contact.textContent = \"Contact Us\";\n    contact.setAttribute(\"id\", \"contactUs\");\n    contact.classList.add(\"menuTitle\");\n\n    const number = document.createElement(\"p\");\n    number.textContent = \"123-456-7890\";\n    number.classList.add(\"role\");\n    const email = document.createElement(\"p\");\n    email.textContent = \"moonlitseasons@gmail.com\";\n    email.classList.add(\"role\");\n\n    mainDiv.appendChild(contact);\n    mainDiv.appendChild(number);\n    mainDiv.appendChild(email);\n\n    return mainDiv;\n}\n\nfunction loadContactpage() {\n    const main = document.querySelector(\"#tabSpace\");\n    main.textContent = \"\";\n    main.appendChild(createContactpage());\n}\n\n//# sourceURL=webpack://RestaurantPage/./src/contact.js?");
+
+/***/ }),
+
 /***/ "./src/home.js":
 /*!*********************!*\
   !*** ./src/home.js ***!
@@ -36,7 +46,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main */ \"./src/main.js\");\n/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home */ \"./src/home.js\");\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./menu */ \"./src/menu.js\");\n/* harmony import */ var _careers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./careers */ \"./src/careers.js\");\n\n\n\n\n\n(0,_main__WEBPACK_IMPORTED_MODULE_0__.default)();\n(0,_home__WEBPACK_IMPORTED_MODULE_1__.default)(); //default load\n\nconst tabBtn = document.querySelectorAll(\".tabs\");\ntabBtn.forEach(e => {\n    e.addEventListener(\"click\", tabClicked);\n});\n\nfunction tabClicked(e) {\n    let tab = e.target.id;\n    switch(tab) {\n        case \"menu\":\n            console.log(tab);\n            (0,_menu__WEBPACK_IMPORTED_MODULE_2__.default)();\n            break;\n        case \"contact\":\n            console.log(tab);\n            break;\n        case \"careers\":\n            (0,_careers__WEBPACK_IMPORTED_MODULE_3__.default)();\n            console.log(tab);\n            break;\n        default:\n            console.log(tab);\n            (0,_home__WEBPACK_IMPORTED_MODULE_1__.default)();\n            break;\n    }\n}\n\n\n\n\n\n//# sourceURL=webpack://RestaurantPage/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main */ \"./src/main.js\");\n/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home */ \"./src/home.js\");\n/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./menu */ \"./src/menu.js\");\n/* harmony import */ var _careers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./careers */ \"./src/careers.js\");\n/* harmony import */ var _contact__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./contact */ \"./src/contact.js\");\n\n\n\n\n\n\n(0,_main__WEBPACK_IMPORTED_MODULE_0__.default)();\n(0,_home__WEBPACK_IMPORTED_MODULE_1__.default)(); //default load\n\nconst tabBtn = document.querySelectorAll(\".tabs\");\ntabBtn.forEach(e => {\n    e.addEventListener(\"click\", tabClicked);\n});\n\nfunction tabClicked(e) {\n    let tab = e.target.id;\n    switch(tab) {\n        case \"menu\":\n            console.log(tab);\n            (0,_menu__WEBPACK_IMPORTED_MODULE_2__.default)();\n            break;\n        case \"contact\":\n            (0,_contact__WEBPACK_IMPORTED_MODULE_4__.default)();\n            console.log(tab);\n            break;\n        case \"careers\":\n            (0,_careers__WEBPACK_IMPORTED_MODULE_3__.default)();\n            console.log(tab);\n            break;\n        default:\n            console.log(tab);\n            (0,_home__WEBPACK_IMPORTED_MODULE_1__.default)();\n            break;\n    }\n}\n\n\n\n\n\n//# sourceURL=webpack://RestaurantPage/./src/index.js?");
 
 /***/ }),
 

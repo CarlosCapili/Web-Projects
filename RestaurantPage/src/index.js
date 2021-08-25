@@ -2,6 +2,7 @@ import loadMainpage from './main';
 import loadHomepage from './home';
 import loadMenupage from './menu';
 import loadCareerspage from './careers';
+import loadContactpage from './contact';
 
 loadMainpage();
 loadHomepage(); //default load
@@ -19,6 +20,7 @@ function tabClicked(e) {
             loadMenupage();
             break;
         case "contact":
+            loadContactpage();
             console.log(tab);
             break;
         case "careers":
