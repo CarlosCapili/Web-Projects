@@ -49,10 +49,17 @@ footer.bar {
     width: 100%;
     border-top: 1px solid #e9c87b;
     border-bottom: none;
+    position: absolute;
+    bottom: 0;
 }
 
 #name {
     margin-bottom: 30px;
+}
+
+#content {
+    position: relative;
+    min-height: 100vh;
 }
 
 /* Title and about section styles */
@@ -71,6 +78,7 @@ footer.bar {
 
 #tabSpace {
     margin: 95px 0;
+
 }
 
 #name {
