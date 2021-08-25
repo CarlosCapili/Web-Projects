@@ -90,15 +90,11 @@ footer.bar {
 }
 
 /* Menu Styles */
-#menuStyles p {
-  
-}
-
 #menuStyles {
     font-size: 30px;
 }
 
-#menuTitle {
+.menuTitle {
     font-family: 'Libre Baskerville', serif;
     text-align: center;
     margin-bottom: 50px;
@@ -134,4 +130,16 @@ footer.bar {
     color: #ffffff;
     font-size: 13px;
 }
+
+/* Career page styles */
+#hiring {
+    font-size: 40px;
+}
+
+.role {
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-family: 'Aleo', serif;
+}
+
 

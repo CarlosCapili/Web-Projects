@@ -5,7 +5,7 @@ function createMenu() {
 
     const menuTitle = document.createElement("h2");
     menuTitle.textContent = "Moonlit Seasons";
-    menuTitle.setAttribute("id", "menuTitle");
+    menuTitle.setAttribute("class", "menuTitle");
 
     // Food choices
     const menuChoice = document.createElement("div");

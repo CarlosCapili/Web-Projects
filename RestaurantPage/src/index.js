@@ -1,6 +1,7 @@
 import loadMainpage from './main';
 import loadHomepage from './home';
 import loadMenupage from './menu';
+import loadCareerspage from './careers';
 
 loadMainpage();
 loadHomepage(); //default load
@@ -21,6 +22,7 @@ function tabClicked(e) {
             console.log(tab);
             break;
         case "careers":
+            loadCareerspage();
             console.log(tab);
             break;
         default:
