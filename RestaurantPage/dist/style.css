@@ -67,18 +67,13 @@ footer.bar {
     position: relative;
     color: #ffffff;
     background: rgba(5,5,5,0.8); 
-    border-radius: 10px;
     max-width: 750px;
-    height: 500px;
+    height: 700px;
     margin: 0px auto;
     padding: 40px;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 }
-
-/* #tabSpace {
-    margin: 95px 0;
-} */
 
 #name {
     margin-top: 110px;
