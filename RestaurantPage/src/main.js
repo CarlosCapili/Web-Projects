@@ -47,8 +47,16 @@ function createFooter() {
     return footerTag;
 }
 
+function createTabSpace() {
+    const tagDiv = document.createElement("div");
+    tagDiv.setAttribute("id", "tabSpace");
+
+    return tagDiv;
+}
+
 export default function loadMainpage() {
     const main = document.querySelector("#content");
     main.appendChild(createNav());
+    main.appendChild(createTabSpace());
     main.appendChild(createFooter());
 }

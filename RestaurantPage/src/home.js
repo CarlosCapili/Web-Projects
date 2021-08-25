@@ -1,6 +1,6 @@
 function createHomepage() {
     const mainDiv = document.createElement('div');
-    mainDiv.setAttribute('id', 'about');
+    mainDiv.setAttribute('class', 'about');
 
     const title = document.createElement('h1');
     title.setAttribute('id', 'name');
@@ -21,6 +21,7 @@ function createHomepage() {
 }
 
 export default function loadHomepage() {
-    const main = document.querySelector("#content");
+    const main = document.querySelector("#tabSpace");
+    main.textContent = "";
     main.appendChild(createHomepage());
 }

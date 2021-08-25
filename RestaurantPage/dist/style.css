@@ -60,8 +60,7 @@ footer.bar {
 }
 
 /* Title and about section styles */
-#about {
-    font-family: 'Montserrat', sans-serif;
+.about {
     position: relative;
     color: #ffffff;
     background: rgba(5,5,5,0.8); 
@@ -71,6 +70,7 @@ footer.bar {
     margin: 0px auto;
     padding: 40px;
     text-align: center;
+    font-family: 'Montserrat', sans-serif;
 }
 
 #name {
@@ -88,3 +88,50 @@ footer.bar {
     color:#ffffff;
     background-color: #8d6302;
 }
+
+/* Menu Styles */
+#menuStyles p {
+  
+}
+
+#menuStyles {
+    font-size: 30px;
+}
+
+#menuTitle {
+    font-family: 'Libre Baskerville', serif;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.two-columns {
+    display: flex;
+    color: #e9c87b;
+}
+
+.columns {
+    flex: 50%;
+    text-align: left;
+}
+
+.columns h4 {
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.menuItem {
+    margin-bottom: 30px;
+}
+
+.itemName {
+    font-family: 'Aleo', serif;
+    color: #ffffff;
+    font-size: 15px;
+}
+
+.itemDesc {
+    font-family: 'Libre Baskerville', serif;
+    color: #ffffff;
+    font-size: 13px;
+}
+
