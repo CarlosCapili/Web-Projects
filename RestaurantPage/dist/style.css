@@ -51,7 +51,7 @@ button:hover {
 }
 
 footer.bar {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     margin-bottom: 0;
     width: 100%;
