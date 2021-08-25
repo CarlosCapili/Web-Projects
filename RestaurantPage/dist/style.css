@@ -36,24 +36,16 @@ button:hover {
     color: #dd9e0c;
 }
 
-#content {
-    /* margin: 30px */
-}
-
 /* nav bar styles */ 
 .bar {
     font-family: 'Montserrat', sans-serif;
     padding: 35px;
     background: rgba(5,5,5,0.8);
-    margin-bottom: 70px;
     border-bottom: 1px solid #e9c87b;
     text-align: center;
 }
 
 footer.bar {
-    position: fixed;
-    bottom: 0;
-    margin-bottom: 0;
     width: 100%;
     border-top: 1px solid #e9c87b;
     border-bottom: none;
@@ -75,6 +67,10 @@ footer.bar {
     padding: 40px;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
+}
+
+#tabSpace {
+    margin: 95px 0;
 }
 
 #name {
