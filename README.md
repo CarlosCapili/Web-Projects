@@ -1,4 +1,4 @@
-Slowly learning. If you want to see them just click on the hyperlinks you betas.
+Slowly learning. If you want to see them just click on the hyperlinks
 
 1. Tribute Page 
 2. Survey 
